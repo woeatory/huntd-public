@@ -1,0 +1,26 @@
+import gql from 'graphql-tag';
+import { PROFILE_CONNECTION_WITH_USERS_FRAGMENT } from '@/modules/profileConnection/profileConnection.fragments.frontend/profileConnectionWithUsers.fragment';
+import { PROFILE_CONNECTION_BASE_FRAGMENT } from '@/modules/profileConnection/profileConnection.fragments.frontend/profileConnectionBase.fragment';
+import { PROFILE_CONNECTION_WITH_PROFILES_FRAGMENT } from '@/modules/profileConnection/profileConnection.fragments.frontend/profileConnectionWithProfiles.fragment';
+import { PROFILE_CONNECTION_UNREAD_MESSAGES_COUNT_FRAGMENT } from '@/modules/profileConnection/profileConnection.fragments.frontend/profileConnectionUnreadMessagesCount.fragment';
+import { PROFILE_CONNECTION_WITH_USERS_META_FRAGMENT } from '@/modules/profileConnection/profileConnection.fragments.frontend/profileConnectionWithUsersMeta.fragment';
+
+export const RECRUITER_PROFILE_ACTIVE_CONNECTION_QUERY = gql`
+  query recruiterProfileActiveConnection($candidateProfileId: Int!) {
+    latestRecruiterProfile {
+      id
+      activeConnectionWithCandidate(
+        candidateProfileId: $candidateProfileId,
+      ) {
+        ...ProfileConnectionBase
+        ...ProfileConnectionWithUsers
+        ...ProfileConnectionWithProfiles
+      }
+    }
+  }
+  ${PROFILE_CONNECTION_BASE_FRAGMENT}
+  ${PROFILE_CONNECTION_WITH_USERS_FRAGMENT}
+  ${PROFILE_CONNECTION_WITH_PROFILES_FRAGMENT}
+  ${PROFILE_CONNECTION_UNREAD_MESSAGES_COUNT_FRAGMENT}
+  ${PROFILE_CONNECTION_WITH_USERS_META_FRAGMENT}
+`;

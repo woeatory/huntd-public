@@ -1,0 +1,84 @@
+@import "utils";
+
+.termsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.term {
+  white-space: nowrap;
+}
+
+.workPlaceContainer {
+  display: flex;
+  margin-bottom: rem-calc(8);
+
+  @include breakpoint (small down) {
+    flex-direction: column;
+  }
+}
+
+.workPlaceInfo {
+  flex-shrink: 0;
+  width: 288px;
+  margin-right: rem-calc(16);
+
+  @include breakpoint (small down) {
+    width: 100%;
+  }
+}
+
+.redDot {
+  width: 4px;
+  height: 4px;
+  margin-right: rem-calc(12);
+  color: var(--icon-color, currentColor);
+  background-color: $c-citrus;
+  border-radius: 50%;
+}
+
+.descriptionField {
+  white-space: pre-wrap;
+}
+
+.tagsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.companyInfoTag {
+  display: flex;
+  align-items: center;
+  padding: rem-calc(4 8);
+  margin-right: rem-calc(8);
+  margin-bottom: rem-calc(8);
+  color: $c-semidark-chocolate;
+  text-transform: capitalize;
+  background-color: $c-snow-gray;
+  border-radius: rem-calc(4);
+  @extend %typography-inter-14;
+}
+
+.companyInfoWrapper {
+  display: flex;
+  margin-bottom: rem-calc(8);
+
+  @include breakpoint (small down) {
+    flex-direction: column;
+  }
+}
+
+.item {
+
+  &:not(:last-child) {
+    margin-bottom: rem-calc(16);
+  }
+}
+
+.divider {
+  width: 1px;
+  margin-right: rem-calc(12);
+  background-color: $c-light-gray;
+}

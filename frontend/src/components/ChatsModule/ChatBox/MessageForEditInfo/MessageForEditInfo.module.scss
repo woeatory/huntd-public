@@ -1,0 +1,58 @@
+@import "utils";
+
+
+@keyframes infoBlockAppears {
+
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+.infoBlockWrapper {
+  display: flex;
+  padding: rem-calc(0 24);
+
+  animation: infoBlockAppears $duration;
+}
+
+.iconContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: rem-calc(60);
+  height: 100%;
+  color: $c-citrus;
+  border-right: 1px solid $c-citrus;
+}
+
+.textBlockWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.mainPartWrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-left: rem-calc(8);
+  @extend %typography-inter-14;
+}
+
+.closeButton {
+  padding: 0;
+  margin-right: rem-calc(16);
+  color: $c-gray;
+  background: none;
+  border: none;
+}
+
+.editMessageTitle {
+  color: $c-citrus;
+}

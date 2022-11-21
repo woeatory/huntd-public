@@ -1,0 +1,34 @@
+@import "utils";
+
+.label {
+  display: inline-block;
+  @extend %typography-inter-14;
+  color: $c-gray;
+}
+
+.attachedCv {
+  display: flex;
+  align-items: center;
+  color: $c-citrus;
+}
+
+.closeButton {
+  @extend %button-reset;
+  color: $c-light-gray;
+  transition: color $duration $easing;
+
+  &:hover {
+    color: $c-gray;
+  }
+}
+
+.cvLink {
+  @extend %typography-inter-12-bold-caps;
+  display: inline-block;
+  padding-top: rem-calc(8);
+  padding-bottom: rem-calc(8);
+  margin-right: rem-calc(8);
+  color: currentColor;
+  text-decoration: none;
+}
+

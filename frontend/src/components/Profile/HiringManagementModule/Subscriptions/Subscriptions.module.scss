@@ -1,0 +1,30 @@
+@import "utils";
+
+.card {
+  @extend %typography-inter-16;
+  display: flex;
+  flex-direction: column;
+  padding: rem-calc(24);
+  margin-bottom: rem-calc(40);
+  color: $c-semidark-chocolate;
+  background-color: $c-white;
+  border-radius: 4px;
+  box-shadow: 0 0 4px rgba(114, 110, 108, 0.12);
+
+  @include breakpoint(small down) {
+    margin-bottom: rem-calc(24);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.item {
+  margin-bottom: rem-calc(16);
+}
+
+.viewCandidatesButton {
+  margin-top: auto;
+  margin-bottom: rem-calc(16);
+}

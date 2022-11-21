@@ -1,0 +1,107 @@
+@import "utils";
+
+.profileLink {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+
+    .profileLinkText::after {
+      transform: scaleX(1);
+      transform-origin: left center;
+    }
+  }
+}
+
+.nftIcon {
+  @include icon-styles {
+    top: -4px;
+    left: -4px;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.nftHexagon {
+  width: 32px;
+  height: 32px;
+  margin-right: 16px;
+}
+
+.profile {
+  @extend %typography-inter-14;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.profileLinkText {
+  @extend %button-reset;
+  @extend %typography-inter-12-caps;
+  color: $c-gray;
+}
+
+.profileLinkOnly {
+  padding: rem-calc(12 0);
+}
+
+.profileStatus {
+  width: 100%;
+  color: $c-semidark-chocolate;
+}
+
+.profileStatusActive {
+  color: $c-citrus;
+}
+
+.profileStatusRejected {
+  color: $c-error;
+}
+
+.profileStatusInactive,
+.profileStatusDraft {
+  color: $c-gray;
+}
+
+.menuWrapper {
+  position: absolute;
+  top: calc(100% + 32px);
+  min-width: 320px;
+  pointer-events: visible;
+  visibility: hidden;
+  background-color: $c-bg;
+  border-radius: 4px;
+  box-shadow: 0 4px 16px rgba(209, 204, 201, 0.5);
+  opacity: 0;
+  transition:
+    visibility 0s $duration,
+    opacity $duration $easing,
+    transform $duration $easing;
+  transform: translateY(-32px);
+
+  &:global(#{$active}) {
+    visibility: visible;
+    opacity: 1;
+    transition:
+      visibility 0s,
+      opacity $duration $easing,
+      transform $duration $easing;
+    transition-delay: 0s;
+    transform: translateY(0);
+  }
+
+  &::before {
+    position: absolute;
+    top: -12px;
+    right: rem-calc(28);
+    width: 24px;
+    height: 24px;
+    content: "";
+    background-color: $c-bg;
+    transform: rotate(45deg);
+  }
+}

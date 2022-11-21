@@ -1,0 +1,143 @@
+@import "utils";
+
+.profileHeader {
+  position: relative;
+  z-index: 1;
+  padding: rem-calc(48 0);
+  color: $c-semidark-chocolate;
+  background-color: $c-light-gray;
+
+  :global(.button-primary) {
+    #{$c-button-text}: $c-semidark-chocolate;
+    #{$c-button-background}: $c-white;
+
+    &:hover {
+      #{$c-button-background}: $c-light-peach;
+    }
+  }
+
+  :global(.button-secondary) {
+    #{$c-button-text}: $c-white;
+    #{$c-button-border}: $c-white;
+    #{$c-button-background}: $c-transparent;
+
+    &:hover {
+      #{$c-button-background}: $c-light-peach;
+      #{$c-button-text}: $c-semidark-chocolate;
+    }
+  }
+}
+
+.profileHeaderActive {
+  background-color: $c-light-peach;
+}
+
+.profileMetaWrapper {
+  color: $c-bg;
+  --icon-color: #{$c-white};
+}
+
+.profileContent {
+  padding-top: rem-calc(40);
+}
+
+.profileRejectMessage {
+  @extend %typography-inter-14;
+  position: relative;
+  padding-left: rem-calc(16);
+  white-space: pre-line;
+
+  @extend %vertical-before-line;
+}
+
+.contactsOverlay {
+  position: relative;
+
+  &::after {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    width: calc(100% - 14.5rem);
+    max-width: 75.5rem;
+    height: 100vh;
+    pointer-events: none;
+    content: "";
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0) calc(#{percentage(2/3)}),
+      $c-gray 1px,
+      rgba(255, 255, 255, 0) calc(#{percentage(2/3)} + 1px)
+    );
+    transform: translateX(-50%);
+    @include breakpoint(large down) {
+      width: calc(100% - 6.5rem);
+    }
+    @include breakpoint(medium down) {
+      display: none;
+    }
+  }
+  &:global(#{$hidden}) {
+
+    &::after {
+      background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) calc(#{percentage(2/3)}),
+        rgba(255, 186, 170, 0.6) calc(#{percentage(2/3)} + 1px),
+        rgba(255, 239, 235, 0) 100%
+      );
+    }
+
+    .contactsContent {
+      pointer-events: none;
+      user-select: none;
+      filter: blur(8px);
+    }
+  }
+}
+
+.inactiveOverlay {
+  &:global(#{$hidden}) {
+
+    &::after {
+      background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) calc(#{percentage(2/3)}),
+        rgba(221, 226, 228, 0.6) calc(#{percentage(2/3)} + 1px),
+        rgba(221, 226, 228, 0) 100%
+      );
+    }
+  }
+}
+
+.nftAvatar {
+  &:global(#{$hidden}) {
+    display: none;
+  }
+}
+
+.contactsHiddenMessage {
+  @extend %typography-inter-12-caps;
+  position: absolute;
+  top: 50%;
+  right: 10%;
+  left: 10%;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: rem-calc(16 24);
+  color: $c-semidark-chocolate;
+  text-align: center;
+
+  @include breakpoint(medium down) {
+    transform: translateY(-50%);
+  }
+
+  :global(.icon-incognito) {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    color: $c-gray;
+  }
+}

@@ -1,0 +1,26 @@
+overwrite: true
+schema:
+  - "http://localhost:1337/graphql"
+documents:
+  - "cms/src/controllers/**/*.queries/**.ts"
+  - "cms/src/controllers/**/*.fragments/**.ts"
+generates:
+  cms/src/controllers/graphql/cms/cms.schema.graphql:
+    plugins:
+      - "schema-ast"
+  cms/src/controllers/graphql/cms/cms.request.generated.ts:
+    plugins:
+      - "typescript"
+      - "typescript-operations"
+      - "typescript-graphql-request"
+    config:
+      gqlImport: '@apollo/client#gql'
+      pureMagicComment: true
+  cms/src/controllers/graphql/cms/cms.generated.ts:
+    plugins:
+      - "typescript"
+      - "typescript-operations"
+      - "typescript-react-apollo"
+    config:
+      gqlImport: '@apollo/client#gql'
+      pureMagicComment: true

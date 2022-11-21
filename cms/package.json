@@ -1,0 +1,60 @@
+{
+  "name": "cms",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A Strapi application",
+  "scripts": {
+    "dev": "strapi develop",
+    "prod": "strapi start",
+    "build": "strapi build",
+    "strapi": "strapi",
+    "lint": "eslint . --fix",
+    "test": "echo \"No test specified\" && exit 0"
+  },
+  "devDependencies": {
+    "@mate-academy/eslint-config-react-internal": "0.0.5",
+    "@mate-academy/ts-config": "^1.0.4",
+    "@types/react": "^16.9.49",
+    "@types/react-router-dom": "^5.1.5",
+    "awesome-typescript-loader": "^5.2.1",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.6.0",
+    "typescript": "^3.9.7"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.2.0",
+    "graphql-request": "^3.1.0",
+    "knex": "<0.20.0",
+    "pg": "^8.3.0",
+    "react": "^16.13.1",
+    "react-router-dom": "^5.2.0",
+    "sqlite3": "^5.0.0",
+    "strapi": "3.5.3",
+    "strapi-admin": "3.5.3",
+    "strapi-connector-bookshelf": "3.5.3",
+    "strapi-helper-plugin": "^3.5.3",
+    "strapi-plugin-content-manager": "3.5.3",
+    "strapi-plugin-content-type-builder": "3.5.3",
+    "strapi-plugin-email": "3.5.3",
+    "strapi-plugin-graphql": "^3.5.3",
+    "strapi-plugin-upload": "3.5.3",
+    "strapi-plugin-users-permissions": "3.5.3",
+    "strapi-provider-email-amazon-ses": "^3.5.3",
+    "strapi-provider-upload-aws-s3": "^3.5.3",
+    "strapi-utils": "3.5.3"
+  },
+  "overrides": {
+    "minipass": "2.7.0"
+  },
+  "author": {
+    "name": "mate academy"
+  },
+  "strapi": {
+    "uuid": "e306acd5-ae07-4551-8f8d-329cbf69c689"
+  },
+  "engines": {
+    "node": ">=10.0.0",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT"
+}

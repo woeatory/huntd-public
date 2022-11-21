@@ -1,0 +1,49 @@
+@import "utils";
+
+.navigationWrapper {
+  display: flex;
+  flex-wrap: wrap;
+
+  @include breakpoint(small down) {
+    flex-direction: column;
+  }
+}
+
+.navLink {
+  position: relative;
+  @extend %typography-inter-12-caps;
+  color: $c-gray;
+  text-decoration: none;
+  transition: color $duration $easing;
+
+  &:after {
+    position: absolute;
+    bottom: rem-calc(-12);
+    left: 0;
+    width: 100%;
+    height: rem-calc(3);
+    content: "";
+    background: transparent;
+  }
+
+  &:not(:last-child) {
+    margin-right: rem-calc(32);
+  }
+  &:global(#{$active}) {
+    color: $c-citrus;
+    @extend %typography-inter-12-caps;
+
+    &:after {
+      background: $c-citrus;
+    }
+  }
+
+  &:hover {
+    color: $c-citrus;
+  }
+
+  @include breakpoint(small down) {
+    margin-right: 0;
+    margin-bottom: rem-calc(16);
+  }
+}

@@ -1,0 +1,11 @@
+@import "utils";
+
+.settingsWrapper {
+  padding: rem-calc(48);
+}
+
+.formWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

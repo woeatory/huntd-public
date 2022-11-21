@@ -1,0 +1,84 @@
+{
+  "kind": "collectionType",
+  "collectionName": "vacancies",
+  "info": {
+    "name": "Vacancies",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "job_title": {
+      "type": "string",
+      "required": true
+    },
+    "company_name": {
+      "type": "string",
+      "required": true
+    },
+    "vacancy_technologies": {
+      "collection": "vacancy-technologies",
+      "via": "vacancy_id"
+    },
+    "vacancy_specializations": {
+      "collection": "vacancy-specializations",
+      "via": "vacancy_id"
+    },
+    "english_level_id": {
+      "model": "english-level"
+    },
+    "job_experience_id": {
+      "model": "job-experience"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "ACTIVE",
+        "INACTIVE"
+      ],
+      "default": "ACTIVE",
+      "required": true
+    },
+    "job_type": {
+      "type": "enumeration",
+      "enum": [
+        "FULL_TIME",
+        "PART_TIME"
+      ],
+      "required": true
+    },
+    "job_category": {
+      "type": "enumeration",
+      "enum": [
+        "US_ONLY",
+        "EUROPE_ONLY",
+        "WORLDWIDE"
+      ],
+      "required": true
+    },
+    "job_description": {
+      "type": "richtext"
+    },
+    "logo": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "salary_from": {
+      "type": "float"
+    },
+    "salary_to": {
+      "type": "float"
+    },
+    "is_top": {
+      "type": "boolean"
+    }
+  }
+}

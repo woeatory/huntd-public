@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/english-levels",
+      "handler": "english-level.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/english-levels/count",
+      "handler": "english-level.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/english-levels/:id",
+      "handler": "english-level.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/english-levels",
+      "handler": "english-level.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/english-levels/:id",
+      "handler": "english-level.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/english-levels/:id",
+      "handler": "english-level.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

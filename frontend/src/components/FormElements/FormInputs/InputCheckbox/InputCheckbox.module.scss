@@ -1,0 +1,49 @@
+@import "utils";
+
+.label {
+  @extend %typography-inter-14;
+  color: $c-gray;
+  cursor: pointer;
+}
+
+.checkBoxContainer {
+  position: relative;
+  display: grid;
+  grid-template-columns: min-content auto;
+  grid-gap: rem-calc(24);
+
+  :global(.icon-check) {
+    width: 18px;
+    height: 18px;
+    color: $white;
+    transition: transform 0.1s ease-in;
+    transform: scale(0);
+  }
+}
+
+.checkBox {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+.checkLabel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  border: 2px solid $c-gray;
+  border-radius: 2px;
+}
+
+.checkBox:checked + .checkLabel {
+  background-color: $c-citrus;
+  border: none;
+}
+
+.checkBox:checked + .checkLabel :global(.icon-check){
+  transform: scale(1);
+}

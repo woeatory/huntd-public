@@ -1,0 +1,150 @@
+@import 'utils';
+
+.partnersSection {
+  padding: rem-calc(80 0 100);
+  background-color: $c-bg;
+
+  @include breakpoint(small down) {
+    padding: rem-calc(40 0 80);
+    margin-top: rem-calc(64);
+  }
+}
+
+.starsContainer {
+  position: absolute;
+  bottom: calc(100% + 96px);
+  left: calc(50% + 32px);
+  width: 98px;
+  height: 132px;
+
+  @include icon-styles {
+    position: absolute;
+  }
+
+  :global(.icon-tall-star) {
+    bottom: 0;
+    left: 0;
+    width: 48px;
+    height: 72px;
+    color: $c-semidark-chocolate;
+  }
+
+  :global(.icon-tall-filled-star) {
+    top: 0;
+    right: 0;
+    width: 24px;
+    height: 36px;
+    color: $c-citrus;
+  }
+
+  @include breakpoint(small down) {
+    bottom: calc(100% + 72px);
+    left: 50%;
+  }
+}
+
+.startups {
+  position: relative;
+  display: grid;
+  flex-wrap: wrap;
+  grid-template-areas: "self good gerald colony rio";
+  grid-column-gap: rem-calc(40);
+  align-items: center;
+  justify-items: center;
+  margin-bottom: rem-calc(64);
+
+  @include breakpoint(large down) {
+    grid-column-gap: rem-calc(24);
+  }
+
+  @include breakpoint(medium down) {
+    grid-template-areas:
+      "self good good gerald"
+      "colony colony rio rio"
+    ;
+    gap: rem-calc(24);
+  }
+
+  @include breakpoint(small down) {
+    grid-template-areas:
+      "self self gerald gerald"
+      "colony colony colony colony"
+      "good good rio rio"
+    ;
+  }
+
+  :global(.icon-partner-selfdecode) {
+    grid-area: self;
+    width: 134px;
+    height: 48px;
+  }
+
+  :global(.icon-partner-goodnotes) {
+    grid-area: good;
+    width: 151px;
+    height: 38px;
+  }
+
+  :global(.icon-partner-gerald) {
+    grid-area: gerald;
+    width: 100px;
+    height: 24px;
+  }
+
+  :global(.icon-partner-colony) {
+    grid-area: colony;
+    width: 163px;
+    height: 32px;
+  }
+
+  :global(.icon-partner-rio) {
+    grid-area: rio;
+    width: 50px;
+    height: 24px;
+  }
+}
+
+.partnerLogo {
+  height: max-content;
+  filter: saturate(0);
+}
+
+.promo {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  :global(.icon-curved-arrow-right) {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 50px;
+    height: 198px;
+    color: $c-citrus;
+    transform: translateX(-100%);
+
+    @include breakpoint(medium down) {
+      transform: translateX(0);
+    }
+
+    @include breakpoint(small down) {
+      display: none;
+    }
+  }
+}
+
+.promoTitle,
+.promoValuesTitle {
+  text-align: center;
+}
+
+.promoValue {
+  display: flex;
+  gap: rem-calc(20);
+  align-items: center;
+
+  @include icon-styles {
+    color: $c-citrus;
+  }
+}

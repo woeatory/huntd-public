@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>309958264854-eumteu0dnc0rstijb7slsf7afrsivsm9.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.309958264854-eumteu0dnc0rstijb7slsf7afrsivsm9</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>309958264854-sgp529suiq09nbumvtt2ggj2mljhedqc.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAN0PMMs_vf7Hv_ymvJqEPkeuKs5E2yT70</string>
+	<key>GCM_SENDER_ID</key>
+	<string>309958264854</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.mateacademy.huntd</string>
+	<key>PROJECT_ID</key>
+	<string>huntd-mobile</string>
+	<key>STORAGE_BUCKET</key>
+	<string>huntd-mobile.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:309958264854:ios:198aa59a56877a0a47cd37</string>
+</dict>
+</plist>

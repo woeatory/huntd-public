@@ -1,0 +1,9 @@
+@import 'utils';
+
+.text{
+  color: $c-semidark-chocolate;
+
+  & span {
+    font-weight: $font-weight_bold;
+  }
+}

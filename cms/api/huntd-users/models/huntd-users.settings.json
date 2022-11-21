@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "users",
+  "info": {
+    "name": "Huntd Users"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "email": {
+      "type": "string"
+    },
+    "first_name": {
+      "type": "string"
+    },
+    "last_name": {
+      "type": "string"
+    },
+    "recruiter_profiles": {
+      "collection": "recruiter-profiles",
+      "via": "user_id"
+    },
+    "candidate_profiles": {
+      "via": "user_id",
+      "collection": "candidate-profiles"
+    },
+    "cv": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "files"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "vacancies_sources": {
+      "via": "user_id",
+      "collection": "vacancies-sources"
+    }
+  }
+}

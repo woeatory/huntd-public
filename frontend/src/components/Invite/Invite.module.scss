@@ -1,0 +1,37 @@
+@import 'utils';
+
+.wrapper {
+  padding-bottom: rem-calc(40);
+  margin-top: rem-calc(40);
+
+  @include breakpoint(medium down) {
+    margin-top: 0;
+  }
+}
+
+.title {
+  @extend %typography-inter-48-bold;
+}
+
+.formContainer {
+  padding: rem-calc(64 0 92);
+  border: 1px solid $c-citrus;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include icon-styles {
+    margin-left: rem-calc(8);
+    transition: transform $duration $easing;
+    transform: translateX(0) rotate(180deg);
+  }
+
+  &:hover {
+    @include icon-styles {
+      transform: translateX(8px) rotate(540deg);
+    }
+  }
+}

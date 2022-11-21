@@ -1,0 +1,53 @@
+%button-reset {
+  padding: 0;
+  font: inherit;
+  color: $c-current;
+  text-decoration: none;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+%text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+%button-base {
+  @extend %typography-inter-12-bold-caps;
+  @extend %button-reset;
+  @extend %text-truncate;
+  display: inline-block;
+  padding: rem-calc(16) rem-calc(32);
+  color: var($c-button-text, $c-extradark-chocolate);
+  text-align: center;
+  background-color: var($c-button-background, $c-transparent);
+  border: 1px solid var($c-button-border, $c-transparent);
+  border-radius: 4px;
+  transition-timing-function: $easing;
+  transition-duration: $duration;
+  transition-property: background-color, color, border-color;
+  @include disabled {
+    cursor: not-allowed;
+  }
+}
+
+%form-with-loader {
+  @include with-loader {
+    background-color: transparentize($c-white, 0.2);
+  }
+}
+
+%vertical-before-line {
+
+  &::before {
+    position: absolute;
+    left: 0;
+    width: 1px;
+    height: 100%;
+    content: "";
+    background-color: $c-current;
+    opacity: 0.5;
+  }
+}

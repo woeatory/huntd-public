@@ -1,0 +1,75 @@
+@import "utils";
+
+.h1 {
+  @extend %typography-inter-56-caps;
+}
+
+.h2 {
+  @extend %typography-inter-48-bold;
+}
+
+.smallHeading {
+  @extend %typography-inter-32;
+}
+
+.smallBoldHeading {
+  @extend %typography-inter-32-bold;
+}
+
+.overhead {
+  @extend %typography-inter-12-bold-caps;
+}
+
+.overheadRegular {
+  @extend %typography-inter-12-caps;
+}
+
+.underhead {
+  @extend %typography-inter-18-bold;
+  color: $c-semidark-chocolate;
+}
+
+.accentTitle {
+  @extend %typography-inter-24-bold;
+  color: $c-semidark-chocolate;
+}
+
+.text {
+  @extend %typography-inter-16;
+}
+
+.alertText {
+  @extend %typography-inter-18;
+  color: $c-semidark-chocolate;
+}
+
+.smallText {
+  @extend %typography-inter-14;
+}
+
+.caption {
+  @extend %typography-inter-16-bold;
+}
+
+.smallCaption {
+  @extend %typography-inter-14-bold;
+}
+
+.alertCaption {
+  @extend %typography-inter-16-bold-caps;
+  color: $c-citrus;
+}
+
+.link {
+  @extend %hover-underline;
+  color: $c-citrus;
+}
+
+.grayLink {
+  @extend %hover-underline;
+  color: $c-semidark-chocolate;
+}
+
+.paragraph {
+  white-space: pre-line;
+}

@@ -1,0 +1,7 @@
+@import "utils";
+
+.notifyButton {
+  @include breakpoint(small down) {
+    width: 100%;
+  }
+}

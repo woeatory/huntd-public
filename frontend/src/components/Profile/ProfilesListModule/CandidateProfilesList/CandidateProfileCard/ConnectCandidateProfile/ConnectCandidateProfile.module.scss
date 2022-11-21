@@ -1,0 +1,43 @@
+@import "utils";
+
+.form {
+  margin-bottom: rem-calc(16);
+}
+
+.messageHeaderWrapper {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.titleWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+}
+
+.messageLabel {
+  @extend %typography-inter-14;
+
+  @include breakpoint(small down) {
+    flex-basis: 50%;
+  }
+}
+
+.templatesSelect {
+  @include breakpoint(small down) {
+    flex-basis: 45%;
+  }
+}
+
+
+.connectButton {
+  @include breakpoint(small down) {
+    width: 100%;
+  }
+}
+
+.templateWrapper {
+  display: flex;
+  align-items: center;
+}

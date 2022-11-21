@@ -1,0 +1,51 @@
+@import "utils";
+
+  .pac-container {
+    @extend %typography-inter-14;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 250px !important;
+    margin-top: rem-calc(20px);
+    margin-left: rem-calc(-14px);
+    border: 1px solid $c-light-gray;
+    border-radius: rem-calc(4);
+
+    .pac-icon {
+      display: none;
+    }
+
+    .pac-item {
+      width: 100%;
+      padding: rem-calc(8 16);
+      cursor: pointer;
+
+      &:hover {
+        background-color: $c-bg;
+        border-color: $c-light-gray;
+        box-shadow: 0 1px 5px rgba(209, 204, 201, 0.4);
+      }
+
+      .pac-item-query {
+        font-weight: $font-weight_regular;
+
+        .pac-matched {
+          font-weight: $font-weight_semi-bold;
+        }
+      }
+
+      span {
+        font-size: rem-calc(12);
+        font-weight: $font-weight_light;
+      }
+    }
+  }
+
+  .pac-logo {
+
+    &::after {
+      width: 100%;
+      padding: rem-calc(8 16);
+      border-top: 1px solid $c-light-gray;
+    }
+  }

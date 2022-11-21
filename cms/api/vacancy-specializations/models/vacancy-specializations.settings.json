@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "vacancy_specializations",
+  "info": {
+    "name": "Vacancy Specializations"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "specialization_id": {
+      "model": "specializations"
+    },
+    "vacancy_id": {
+      "via": "vacancy_specializations",
+      "model": "vacancies"
+    }
+  }
+}

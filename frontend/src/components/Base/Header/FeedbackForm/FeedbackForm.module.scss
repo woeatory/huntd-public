@@ -1,0 +1,17 @@
+@import 'utils';
+
+.feedbackForm {
+  display: flex;
+  flex-direction: column;
+  gap: rem-calc(16);
+}
+
+.submitButton {
+  max-width: max-content;
+  padding: rem-calc(16 62);
+
+  @include breakpoint(small down) {
+    max-width: unset;
+    padding: rem-calc(16 32);
+  }
+}

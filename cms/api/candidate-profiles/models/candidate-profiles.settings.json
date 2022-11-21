@@ -1,0 +1,53 @@
+{
+  "kind": "collectionType",
+  "collectionName": "candidate_profiles",
+  "info": {
+    "name": "Candidate Profiles",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "DRAFT",
+        "ON_REVIEW",
+        "REJECTED",
+        "ACTIVE",
+        "INACTIVE"
+      ],
+      "default": "DRAFT",
+      "required": true
+    },
+    "position": {
+      "type": "string"
+    },
+    "salary": {
+      "type": "decimal"
+    },
+    "candidate_description": {
+      "type": "text"
+    },
+    "experience_description": {
+      "type": "text"
+    },
+    "reject_reason": {
+      "type": "string"
+    },
+    "user_id": {
+      "model": "huntd-users",
+      "via": "candidate_profiles"
+    },
+    "profile_connections": {
+      "collection": "profile-connections",
+      "via": "candidate_profile_id"
+    },
+    "achievements": {
+      "type": "text"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+version: "3.3"
+
+services:
+  ############################## FRONTEND #############################
+  # next.js based application
+  frontend:
+    restart: always
+    command: >
+      npm run test
+    build:
+      context: ./frontend
+      args:
+        - APP_ENV=${APP_ENV}
+        - NPM_TOKEN=${NPM_TOKEN}
+    image: huntd/huntd-frontend:${TAG}
+    ports:
+      - 3000:3000
+    env_file:
+      - .test.env
+    volumes:
+      - ./frontend:/usr/src/frontend
+      - /usr/src/frontend/node_modules
+

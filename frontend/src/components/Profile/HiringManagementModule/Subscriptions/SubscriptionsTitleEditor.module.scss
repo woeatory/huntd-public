@@ -1,0 +1,18 @@
+@import "utils";
+
+.editingContainer {
+  display: flex;
+  margin-bottom: rem-calc(24);
+}
+
+.saveTitleButton {
+  @extend %button-reset;
+  color: $c-citrus;
+  @extend %typography-inter-12-bold-caps;
+}
+
+.closeButton {
+  @extend %button-reset;
+  margin-left: rem-calc(12);
+  color: $c-gray;
+}

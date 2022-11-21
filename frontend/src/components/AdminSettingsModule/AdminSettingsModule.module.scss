@@ -1,0 +1,64 @@
+@import 'utils';
+
+.wrapper {
+  position: fixed;
+  top: rem-calc(4);
+  right: rem-calc(32);
+  z-index: 12;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background-color: $c-light-peach;
+  border: 1px dashed $c-citrus;
+  border-radius: 50%;
+  transition:
+    opacity $duration $easing,
+    border $duration $easing;
+
+  &:hover {
+    cursor: pointer;
+    border: 1px solid $c-citrus;
+  }
+
+  @include breakpoint(large down) {
+    display: none;
+  }
+}
+
+.burgerButton {
+  @extend %button-reset;
+  padding: rem-calc(16 0);
+
+  .line {
+    display: block;
+    width: 32px;
+    height: 2px;
+    background-color: $c-citrus;
+    transition: transform $duration $easing;
+
+    &:first-child {
+      margin-bottom: rem-calc(8);
+    }
+  }
+
+  &:global(#{$active}) {
+
+    .line {
+
+      &:first-child {
+        transform: translateY(4px) rotate(-45deg);
+      }
+
+      &:last-child {
+        transform: translateY(-6px) rotate(45deg);
+      }
+    }
+  }
+}
+
+.sidebar {
+  width: max-content;
+}

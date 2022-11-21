@@ -1,0 +1,17 @@
+@import "utils";
+
+.employmentType {
+  flex: none;
+  margin-right: rem-calc(64);
+}
+
+.iconContainer {
+  margin-left: rem-calc(8);
+}
+
+.checkboxLabel {
+  color: $c-semidark-chocolate;
+  text-transform: capitalize;
+}
+
+

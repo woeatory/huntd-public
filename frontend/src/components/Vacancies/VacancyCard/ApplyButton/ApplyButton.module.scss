@@ -1,0 +1,22 @@
+@import "utils";
+
+.appliedWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.appliedLabel {
+  @extend %typography-inter-12;
+  color: $c-gray;
+  text-align: center;
+}
+
+.appliedMessage {
+  @extend %typography-inter-12-bold-caps;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: $c-citrus;
+}

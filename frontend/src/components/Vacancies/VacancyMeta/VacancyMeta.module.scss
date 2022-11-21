@@ -1,0 +1,43 @@
+@import "utils";
+
+.metaWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+
+  @include breakpoint(small down) {
+    display: block;
+    max-width: 100%;
+    text-align: center;
+  }
+}
+
+.baseItem {
+  color: $c-gray;
+}
+
+.metaItem {
+  @extend .baseItem;
+  display: flex;
+  align-items: center;
+
+  @include icon-styles {
+    margin: rem-calc(0 16);
+    color: $c-citrus;
+  }
+
+  @include breakpoint(small down) {
+    flex-direction: column;
+    margin: 0;
+
+    @include icon-styles {
+      margin: 0;
+    }
+  }
+}
+
+.firstMetaItem {
+  @include icon-styles {
+   display: none;
+  }
+}

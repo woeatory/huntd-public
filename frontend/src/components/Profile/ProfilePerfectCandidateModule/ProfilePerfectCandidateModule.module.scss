@@ -1,0 +1,25 @@
+@import 'utils';
+
+.buttonsContainer {
+  position: sticky;
+  bottom: rem-calc(16);
+  display: flex;
+  flex-direction: column;
+  gap: rem-calc(16);
+  align-items: justify;
+  background-color: transparentize($c-white, .1);
+  border-radius: 4px;
+}
+
+.text {
+  margin-top: rem-calc(8);
+  text-align: center;
+}
+
+.button {
+  flex: 1 1 50%;
+
+  @include breakpoint(small down) {
+    width: 100%;
+  }
+}

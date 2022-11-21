@@ -1,0 +1,42 @@
+@import "utils";
+
+.heading {
+  display: flex;
+  align-items: center;
+
+  @include breakpoint(small down) {
+    flex-direction: column;
+    gap: rem-calc(16);
+    align-items: stretch;
+  }
+}
+
+.web3Buttons {
+  display: flex;
+  margin-left: auto;
+}
+
+.salaryJobsTitle {
+  display: flex;
+  flex-direction: column;
+}
+
+.headerButtonContainer {
+  @include breakpoint(small down) {
+    margin-left: 0;
+  }
+}
+
+.postBtn {
+  @include breakpoint(small down) {
+    width: 100%;
+  }
+}
+
+.jobsTitle {
+  @extend %typography-inter-48-bold;
+}
+
+.companyName {
+  text-transform: capitalize;
+}

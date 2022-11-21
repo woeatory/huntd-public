@@ -1,0 +1,119 @@
+version: "3.3"
+
+services:
+  ############################### NGINX ###############################
+  # nginx reverse proxy
+  nginx:
+    restart: always
+    build:
+      context: ./nginx
+    image: huntd/huntd-nginx:${TAG}
+    ports:
+      - 80:80
+      - 443:443
+    depends_on:
+      - api
+      - frontend
+      - cms
+      - db
+    volumes:
+      - ./nginx:/etc/nginx:cached
+      - ./nginx/local-ssl:/etc/nginx/ssl:cached
+      - ./nginx/nginx.local.conf:/etc/nginx/nginx.conf
+  ############################### REDIS ###############################
+  # redis
+  redis:
+    image: redis:5.0
+    ports:
+      - '6379:6379'
+
+  ################################# CMS ################################
+  # strapi cms
+  cms:
+    restart: always
+    command: ["./wait-for-it.sh", "api:4000/healthz", "npm", "run", "dev", "-- --watch-admin"]
+    build:
+      context: ./cms
+      args:
+        - APP_ENV=${APP_ENV}
+        - NPM_TOKEN=${NPM_TOKEN}
+    image: huntd/huntd-cms:${TAG}
+    ports:
+      - 1337:1337
+      - 8000:8000
+    depends_on:
+      - api
+    env_file:
+      - .env
+    volumes:
+      - ./cms:/usr/src/cms:cached
+      # monkey patch to disable host check in webpack dev server (use local.huntd.tech for admin development)
+      - ./cms/overwrites/strapi-admin/index.js:/usr/src/cms/node_modules/strapi-admin/index.js:cached
+      - /usr/src/cms/node_modules
+      - /usr/src/cms/.cache
+      - /usr/src/cms/build
+
+  # ################################ API ################################
+  # sequelize + graphql wrapper over postgres database
+  api:
+    restart: always
+    build:
+      context: ./api
+      args:
+        - APP_ENV=${APP_ENV}
+        - NPM_TOKEN=${NPM_TOKEN}
+    image: huntd/huntd-api:${TAG}
+    command: >
+      bash -c "npm run dev"
+    ports:
+      - "4000:4000"
+      - "9229:9229"
+    env_file:
+      - .env
+    depends_on:
+      - redis
+      - db
+    volumes:
+      - ./api:/usr/src/api:cached
+      - /usr/src/api/node_modules
+      - /usr/src/api/dist
+
+  # ############################## FRONTEND #############################
+  # next.js based application
+  frontend:
+    restart: always
+    command: ["./wait-for-it.sh", "api:4000/healthz", "npm", "run", "dev"]
+    build:
+      context: ./frontend
+      args:
+        - APP_ENV=${APP_ENV}
+        - NPM_TOKEN=${NPM_TOKEN}
+    image: huntd/huntd-frontend:${TAG}
+    ports:
+      - 3000:3000
+    depends_on:
+      - api
+    env_file:
+      - .env
+    volumes:
+      - ./frontend:/usr/src/frontend:cached
+      - /usr/src/frontend/node_modules
+      - /usr/src/frontend/.next
+      - /usr/src/frontend/out
+
+  ############################## DB #############################
+  db:
+    image: postgres:10.21
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: '772184'
+      POSTGRES_DB: huntd_development
+      POSTGRES_USER: dev
+      POSTGRES_PORT: 5432
+    volumes:
+      - ./db:/docker-entrypoint-initdb.d
+      - database_data:/var/lib/postgresql/data
+volumes:
+  database_data:
+    driver: local

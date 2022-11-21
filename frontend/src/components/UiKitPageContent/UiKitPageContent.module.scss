@@ -1,0 +1,11 @@
+.rowItem {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-auto-rows: auto;
+  grid-gap: 16px;
+}
+
+.rowItemIcons {
+  @extend .rowItem;
+  grid-template-columns: repeat(auto-fit, minmax(24px, 1fr));
+}

@@ -1,0 +1,19 @@
+@import "utils";
+
+.mapToggle {
+  display: grid;
+  grid-template-columns: repeat(2, rem-calc(70));
+  gap: rem-calc(8);
+  align-items: center;
+}
+
+.toggleAction {
+  @extend %typography-inter-14;
+  max-width: max-content;
+  color: $c-semidark-chocolate;
+  text-align: right;
+}
+
+.sliderValues {
+  color: $c-semidark-chocolate;
+}

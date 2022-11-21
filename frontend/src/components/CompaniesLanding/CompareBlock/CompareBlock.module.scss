@@ -1,0 +1,141 @@
+@import 'utils';
+
+.wrapper {
+  @include breakpoint(medium down) {
+    margin-bottom: rem-calc(192);
+  }
+}
+
+.title {
+  text-align: center;
+
+  & span {
+    color: $c-citrus;
+  }
+}
+
+.headingContainer {
+  padding-bottom: rem-calc(24);
+}
+
+.heading {
+  display: inline-flex;
+  flex-basis: 25%;
+}
+
+.headings {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: rem-calc(368);
+  padding: rem-calc(48 0);
+
+  @include breakpoint(small down) {
+    padding: rem-calc(32 0);
+  }
+}
+
+.headingsBlock {
+  display: flex;
+  flex-basis: 80%;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.swiperContainer {
+  height: 100%;
+  padding-bottom: rem-calc(24);
+
+  @include breakpoint(large) {
+    pointer-events: none;
+    cursor: default;
+  }
+
+  :global(.swiper-pagination) {
+    bottom: 0;
+    left: 100%;
+    max-width: max-content;
+    transform: translateX(-100%);
+
+    @include breakpoint(small down) {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    @include breakpoint(large) {
+      display: none;
+    }
+  }
+
+  :global(.swiper-wrapper) {
+    display: flex;
+    align-items: stretch;
+  }
+
+  :global(.swiper-pagination-bullet) {
+    width: 16px;
+    height: 2px;
+    background-color: $c-light-gray;
+    border-radius: 0;
+
+    &:global(.swiper-pagination-bullet-active) {
+      background-color: $c-citrus;
+    }
+  }
+}
+
+.slide {
+  display: flex;
+  flex-direction: column;
+  height: rem-calc(368);
+  padding: rem-calc(48 48);
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  background-color: $c-bg;
+  border-radius: 4px;
+  box-shadow: 0 1px 16px rgba(114, 110, 108, 0.16);
+
+  &:global(#{$accent}) {
+    color: $c-white;
+    background-color: $c-citrus;
+  }
+
+  @include breakpoint(medium down) {
+    padding: rem-calc(48 32);
+  }
+
+  @include breakpoint(small down) {
+    padding: rem-calc(32 16);
+  }
+}
+
+.reviewTitle {
+  flex-basis: 20%;
+}
+
+.reviewerWrapper {
+  display: flex;
+  flex-basis: 80%;
+  flex-direction: column;
+}
+
+.reviewItem {
+  flex-basis: 25%;
+}
+
+.reviewText {
+  display: inline-flex;
+  gap: rem-calc(16);
+  align-items: center;
+  line-height: rem-calc(23);
+
+  @include icon-styles {
+    width: rem-calc(18);
+    height: rem-calc(18);
+    color: $c-white;
+  }
+
+  @include breakpoint(medium down) {
+    gap: rem-calc(8);
+  }
+}

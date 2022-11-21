@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/vacancy-specializations",
+      "handler": "vacancy-specializations.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/vacancy-specializations/count",
+      "handler": "vacancy-specializations.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/vacancy-specializations/:id",
+      "handler": "vacancy-specializations.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/vacancy-specializations",
+      "handler": "vacancy-specializations.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/vacancy-specializations/:id",
+      "handler": "vacancy-specializations.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/vacancy-specializations/:id",
+      "handler": "vacancy-specializations.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+@import "utils";
+
+.socialProfile {
+  padding: rem-calc(24 0);
+  border-bottom: 1px solid $c-gray;
+
+   &:first-child {
+     border-top: 1px solid $c-gray;
+   }
+}
+
+.socialProfileTitle {
+  display: flex;
+  align-items: center;
+
+  @include breakpoint(medium down) {
+    margin-bottom: rem-calc(12);
+  }
+}
+
+.socialProfileIcon {
+  margin-right: rem-calc(24);
+  color: $c-citrus;
+}
+
+.socialProfileName {
+  @extend %typography-inter-16-bold;
+}
+
+.socialProfileLabel {
+  @extend %typography-inter-14;
+  color: $c-gray;
+}
+
+.disconnectButton {
+  color: $c-citrus;
+}

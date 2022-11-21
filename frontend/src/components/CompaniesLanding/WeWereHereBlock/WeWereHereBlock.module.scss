@@ -1,0 +1,142 @@
+@import 'utils';
+
+.orangeBlock {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: min-content;
+  padding: rem-calc(32 48 32);
+  color: $c-white;
+  text-align: center;
+  background-color: $c-citrus;
+  border-radius: 4px;
+  box-shadow: 0 1px 16px rgba(114, 110, 108, 0.16);
+
+  @include breakpoint(small down) {
+    margin-top: rem-calc(68);
+    margin-bottom: rem-calc(180);
+  }
+
+  @include breakpoint(medium) {
+    margin-bottom: rem-calc(256);
+  }
+
+  :global(.icon-curved-arrow-left) {
+    position: absolute;
+    bottom: -24px;
+    left: calc(50% - ((100% / 12) + 0.75rem));
+    width: 176px;
+    height: 148px;
+    color: $c-citrus;
+    transform: translate(-50%, 100%);
+
+    @include breakpoint(small down) {
+      bottom: -16px;
+      left: 50%;
+    }
+  }
+}
+
+.starsContainer {
+  position: absolute;
+  bottom: calc(100% + 24px);
+  left: 25%;
+  width: 72px;
+  height: 108px;
+
+  @include icon-styles {
+    position: absolute;
+  }
+
+  :global(.icon-tall-star) {
+    top: 0;
+    right: 0;
+    width: 24px;
+    height: 36px;
+    color: $c-semidark-chocolate;
+  }
+
+  :global(.icon-tall-filled-star) {
+    bottom: 0;
+    left: 0;
+    width: 48px;
+    height: 72px;
+    color: $c-citrus;
+  }
+}
+
+.orangeSubtitle {
+  @extend %typography-inter-24-bold;
+  color: $c-white;
+}
+
+.founderStory {
+  flex-wrap: wrap;
+  gap: rem-calc(128);
+
+  @include breakpoint(small down) {
+    gap: 0;
+    align-items: center;
+  }
+}
+
+.bio {
+  @include breakpoint(small down) {
+    margin-bottom: rem-calc(24);
+  }
+}
+
+.story {
+
+  & span {
+    font-weight: $font-weight_bold;
+    color: $c-citrus;
+  }
+}
+
+.position {
+
+  & span {
+    font-weight: $font-weight_bold;
+  }
+}
+
+.founderPhoto {
+  position: relative;
+  width: 100%;
+  height: rem-calc(472);
+  margin-bottom: rem-calc(16);
+
+  & > div {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.founderMission {
+  position: relative;
+  margin-top: rem-calc(42);
+
+  &::before {
+    position: absolute;
+    top: -16px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    content: '';
+    background: linear-gradient(0.75turn, #FFBAAA 0%,
+    #C2EDFF 100%);
+  }
+
+  @include icon-styles {
+    position: absolute;
+    top: -42px;
+    right: 0;
+    width: 24px;
+    height: 24px;
+    color: $c-citrus;
+    transform: rotate(135deg);
+  }
+}

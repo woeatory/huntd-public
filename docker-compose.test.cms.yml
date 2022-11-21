@@ -1,0 +1,24 @@
+version: "3.3"
+
+services:
+  ################################ CMS ################################
+  # strapi cms
+  cms:
+    restart: always
+    command: >
+      npm run test
+    build:
+      context: ./cms
+      args:
+        - APP_ENV=${APP_ENV}
+        - NPM_TOKEN=${NPM_TOKEN}
+    image: huntd/huntd-cms:${TAG}
+    ports:
+      - 1337:1337
+      - 8000:8000
+    env_file:
+      - .test.env
+    volumes:
+      - ./cms:/usr/src/cms
+      - /usr/src/cms/node_modules
+

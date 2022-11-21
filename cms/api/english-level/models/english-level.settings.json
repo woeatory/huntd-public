@@ -1,0 +1,17 @@
+{
+  "kind": "collectionType",
+  "collectionName": "english_levels",
+  "info": {
+    "name": "English level"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "slug": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+@import "utils";
+
+.messageSelect {
+  @extend %typography-inter-14;
+  flex-basis: 35%;
+
+  :global(.select__control) {
+    border: none;
+  }
+
+  :global(.select__control:hover) {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+  }
+
+  :global(.select__option:hover) {
+    background-color: transparent;
+  }
+}

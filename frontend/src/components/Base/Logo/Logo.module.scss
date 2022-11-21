@@ -1,0 +1,14 @@
+@import "utils";
+
+.logo {
+  @extend %typography-inter-16-bold;
+  @extend %hover-underline;
+  padding: rem-calc(8) 0;
+  margin-bottom: rem-calc(4); // to be in line with text elements
+  color: $c-extradark-chocolate;
+  @include hover(color, $c-gray);
+
+  &::after {
+    bottom: rem-calc(8);
+  }
+}

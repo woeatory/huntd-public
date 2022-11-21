@@ -1,0 +1,23 @@
+@import "utils";
+
+.cardHeader {
+  @extend %typography-inter-32-bold-caps;
+  color: $c-semidark-chocolate;
+  @include breakpoint(small down) {
+    font-size: rem-calc(24);
+  }
+}
+
+.cardJobTitle {
+  @extend %typography-inter-24;
+  color: $c-semidark-chocolate;
+  @include breakpoint(small down) {
+    font-size: rem-calc(16);
+  }
+}
+
+.cardImage {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}

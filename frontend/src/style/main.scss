@@ -1,0 +1,56 @@
+@import "~foundation-sites/scss/foundation";
+
+@import "utils";
+@import "reset";
+@import "atomic";
+@import "placesSuggestions";
+
+@include foundation-xy-grid-classes(
+  $base-grid: true,
+  $margin-grid: true,
+  $padding-grid: false,
+  $block-grid: false,
+  $collapse: false,
+  $offset: true,
+  $vertical-grid: false,
+  $frame-grid: false
+);
+@include foundation-flex-classes;
+@include foundation-visibility-classes;
+@include foundation-prototype-classes;
+@include foundation-text-alignment;
+
+html {
+  --scrollbar-width: 0;
+  &#{$has-modal} {
+
+    &, body {
+      overflow: hidden;
+    }
+  }
+}
+
+body {
+  padding-right: var(--scrollbar-width);
+  font-family: $f-primary;
+  #{$header-height}: rem-calc(68);
+  #{$admin-panel-height}: rem-calc(48);
+  #{$header-with-alert-height}: var($header-height);
+
+  #{$admin-panel-visible} & {
+    #{$header-height}: rem-calc(116);
+  }
+
+  #{$alert-message-visible} & {
+    #{$header-with-alert-height}: rem-calc(140);
+
+    @include breakpoint(medium down) {
+      #{$header-with-alert-height}: rem-calc(160);
+    }
+
+    @include breakpoint(small down) {
+      #{$header-with-alert-height}: rem-calc(200);
+    }
+  }
+}
+

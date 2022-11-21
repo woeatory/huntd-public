@@ -1,0 +1,34 @@
+@import "utils";
+
+.wrapper {
+  position: relative;
+  margin-bottom: rem-calc(160);
+}
+
+.salaryBlock {
+  position: relative;
+  max-width: 70%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.underhead {
+  @extend %typography-inter-24;
+}
+
+.arrowIcon {
+  @include icon-styles {
+    position: absolute;
+    bottom: -16px;
+    left: 50%;
+    width: 34px;
+    height: 127px;
+    color: $c-citrus;
+    transform: translate(-50%, 100%);
+
+    @include breakpoint(small down) {
+      bottom: -16px;
+      left: 50%;
+    }
+  }
+}

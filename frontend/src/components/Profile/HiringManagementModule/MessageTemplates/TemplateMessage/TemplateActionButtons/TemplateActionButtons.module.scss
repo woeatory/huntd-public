@@ -1,0 +1,32 @@
+@import "utils";
+
+.templateActionsWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @include breakpoint(small down) {
+    flex-direction: column;
+  }
+}
+
+.templateButton {
+  padding: rem-calc(12 56);
+
+  @include breakpoint(small down) {
+    width: 100%;
+    margin-bottom: rem-calc(16);
+  }
+}
+
+.deleteTemplateButton {
+  @extend %button-reset;
+  @extend %typography-inter-12-bold-caps;
+  padding: rem-calc(12);
+  color: $c-citrus;
+
+  @include breakpoint(small down) {
+    width: 100%;
+    margin-bottom: rem-calc(16);
+  }
+}

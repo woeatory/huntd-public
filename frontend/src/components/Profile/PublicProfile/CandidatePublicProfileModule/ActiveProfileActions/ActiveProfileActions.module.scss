@@ -1,0 +1,13 @@
+@import "utils";
+
+.activeProfile {
+  align-self: flex-end;
+}
+
+.activeStatus {
+  color: $c-citrus;
+
+  @include icon-styles {
+    color: $c-citrus;
+  }
+}

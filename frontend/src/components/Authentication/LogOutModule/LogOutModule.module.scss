@@ -1,0 +1,15 @@
+@import "utils";
+
+.logOutButton {
+  @extend %typography-inter-14-caps;
+  #{$c-button-text}: $c-citrus;
+  display: flex;
+  flex-shrink: 0;
+  padding: 0;
+  cursor: pointer;
+  @include hover(color, $c-extradark-chocolate);
+
+  &::after {
+    bottom: 0;
+  }
+}

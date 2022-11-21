@@ -1,0 +1,49 @@
+@import 'utils';
+
+.cardsWrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.wrapper {
+  position: relative;
+  margin-bottom: rem-calc(190);
+}
+
+.fundedStartups {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: rem-calc(32 48);
+  text-align: center;
+  background-color: $c-citrus;
+  border-radius: rem-calc(16);
+}
+
+.title {
+  @extend %typography-inter-12-bold-caps;
+  color: $c-white;
+}
+
+.subtitle {
+  @extend %typography-inter-24-bold;
+  color: $c-white;
+}
+
+.arrowIcon {
+  @include icon-styles {
+    position: absolute;
+    bottom: -16px;
+    left: 50%;
+    width: 34px;
+    height: 127px;
+    color: $c-citrus;
+    transform: translate(-50%, 100%);
+
+    @include breakpoint(small down) {
+      bottom: -16px;
+      left: 50%;
+    }
+  }
+}

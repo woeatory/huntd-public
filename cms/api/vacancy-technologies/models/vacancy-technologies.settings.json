@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "vacancy_technologies",
+  "info": {
+    "name": "Vacancy Technologies"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "technology_id": {
+      "model": "technologies"
+    },
+    "vacancy_id": {
+      "via": "vacancy_technologies",
+      "model": "vacancies"
+    }
+  }
+}

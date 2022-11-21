@@ -1,0 +1,132 @@
+@import "utils";
+
+.form {
+  @extend %form-with-loader;
+  height: 100%;
+}
+
+.filtersWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  @include webkit-smoothscroll;
+  @include breakpoint(large) {
+    padding: rem-calc(0 1);
+    margin-right: rem-calc(48);
+  }
+  @include breakpoint(medium down) {
+    max-height: calc(100vh - var(#{$header-with-alert-height}));
+    padding: rem-calc(24);
+  }
+  @include breakpoint(small down) {
+    flex-direction: column;
+    max-height: 100vh;
+    padding: rem-calc(16);
+    padding-top: 0;
+  }
+
+  &:global(#{$disabled}) {
+    overflow-y: hidden;
+  }
+}
+
+.sidebarFilters {
+  justify-content: flex-start;
+  height: 100vh;
+}
+
+.closeSidebarButton {
+  @extend %button-reset;
+  margin-left: auto;
+  color: $c-gray;
+}
+
+.sidebarHeader {
+  display: none;
+
+  @include breakpoint(small down) {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    width: 100vw;
+    padding: rem-calc(16);
+    background-color: $c-white;
+    box-shadow: 0 1px 1px rgba(209, 204, 201, 0.5);
+    transform: translateX(rem-calc(-16));
+  }
+}
+
+.loader {
+  z-index: 3;
+}
+
+.sliderContainer {
+
+  :global(.rc-slider) {
+    width: calc(100% - 24px);
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+.sliderValuesArea {
+  @extend %typography-inter-14;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  color: $c-gray;
+}
+
+.filtersTabletButton {
+  display: flex;
+  flex: 1 1 100%;
+  align-items: center;
+  justify-content: space-between;
+  color: $c-gray;
+  border-color: $c-light-gray;
+
+  @include breakpoint(small down) {
+    display: none;
+  }
+}
+
+.filtersMobileButton {
+  display: none;
+
+  @include breakpoint(small down) {
+    display: inline-block;
+    width: rem-calc(48);
+    height: rem-calc(48);
+    color: $c-light-peach;
+
+    @include icon-styles {
+      width: rem-calc(48);
+      height: rem-calc(48);
+    }
+  }
+}
+
+.mobileFloatingButtons {
+  @include breakpoint(large) {
+    display:none
+  }
+
+  @include breakpoint(medium down) {
+    top: 0;
+    z-index: 2;
+  }
+
+  @include breakpoint(small down) {
+    top: var($header-height);
+  }
+}
+
+.desktopFloatingButtons {
+  bottom: 0;
+  @include breakpoint(medium down) {
+    display: none;
+  }
+}

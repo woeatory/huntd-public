@@ -1,0 +1,188 @@
+@import "utils";
+
+.footer {
+  position: relative;
+  z-index: 1;
+  padding: rem-calc(32) 0;
+  color: $c-bg;
+  background-color: $c-extradark-chocolate;
+  @include breakpoint(small down) {
+    padding: rem-calc(40) 0;
+  }
+}
+
+.footerLogo {
+  color: $c-current;
+  @extend %typography-inter-24-bold;
+  @include hover(color, $c-citrus);
+}
+
+.footerSocials {
+  display: flex;
+  align-items: center;
+  margin-top: rem-calc(24);
+}
+
+.footerList {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  height: 100%;
+}
+
+.footerListItem {
+  @extend %typography-inter-14;
+
+  &:not(:last-child) {
+    margin-bottom: rem-calc(12);
+  }
+}
+
+.footerLink {
+  @extend %hover-underline;
+  color: $c-current;
+  @include hover(color, $c-citrus);
+}
+
+.copyright {
+  @include breakpoint(medium down) {
+    display: flex;
+    justify-content: center;
+    margin-top: rem-calc(24);
+  }
+
+  @include breakpoint(small down) {
+    margin-top: 0;
+  }
+}
+
+.blocksContainer {
+  display: flex;
+  justify-content: center;
+
+  @include breakpoint(small down) {
+    flex-direction: column;
+  }
+}
+
+.link {
+  @extend %button-reset;
+  @extend %typography-inter-14;
+  display: block;
+  width: fit-content;
+  margin-bottom: rem-calc(12);
+  transition: color $duration $easing;
+
+  &:hover {
+    color: $c-citrus;
+  }
+
+  &:nth-child(5) {
+    margin-bottom: rem-calc(24);
+  }
+}
+
+.linksTitle {
+  @extend %typography-inter-14-bold;
+}
+
+.linksBlock {
+  flex-shrink: 0;
+  width: fit-content;
+  margin-right: rem-calc(16);
+
+  @include breakpoint(small down) {
+    margin-bottom: rem-calc(48);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.dividerWrapper {
+  display: flex;
+  justify-content: center;
+
+  @include breakpoint(small down) {
+    margin-bottom: rem-calc(48);
+
+    &:last-child {
+      margin-top: 0;
+    }
+  }
+}
+
+.blockDivider {
+  width: 1px;
+  height: 100%;
+  background-color: $c-citrus;
+
+  @include breakpoint(small down) {
+    width: 100%;
+    height: 1px;
+  }
+}
+
+.web3Title {
+  @extend %typography-inter-32-bold-caps;
+  color: $c-white;
+  text-align: center;
+}
+
+.web3BlockContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: rem-calc(120);
+}
+
+.companiesWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-bottom: rem-calc(48);
+
+  @include breakpoint(small down) {
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+.companyCard {
+  margin-right: rem-calc(72);
+
+  @include breakpoint(medium) {
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  @include breakpoint(medium down) {
+    margin-right: rem-calc(48);
+  }
+
+  @include breakpoint(small down) {
+    margin: rem-calc(8);
+  }
+}
+
+.button {
+  display: flex;
+  align-items: center;
+
+  @include icon-styles {
+    margin-left: rem-calc(8);
+    transition: transform $duration $easing;
+    transform: translateX(0) rotate(180deg);
+  }
+
+  &:hover {
+    @include icon-styles {
+      transform: translateX(8px) rotate(540deg);
+    }
+  }
+}

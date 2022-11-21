@@ -1,0 +1,344 @@
+[
+  {
+    "language": "en",
+    "namespace": "common",
+    "code": "hire_web3_developer_seo_link",
+    "value": "hire_web3_developer_seo_link"
+  },
+  {
+    "language": "en",
+    "namespace": "common",
+    "code": "hire_web3_developer_seo_title",
+    "value": "hire_web3_developer_seo_title"
+  },
+  {
+    "language": "en",
+    "namespace": "common",
+    "code": "remote_web3_jobs_seo_link",
+    "value": "remote_web3_jobs_seo_link"
+  },
+  {
+    "language": "en",
+    "namespace": "common",
+    "code": "remote_web3_jobs_seo_title",
+    "value": "remote_web3_jobs_seo_title"
+  },
+  {
+    "language": "en",
+    "namespace": "common",
+    "code": "remote_web3_salaries_seo_link",
+    "value": "remote_web3_salaries_seo_link"
+  },
+  {
+    "language": "en",
+    "namespace": "common",
+    "code": "remote_web3_salaries_seo_title",
+    "value": "remote_web3_salaries_seo_title"
+  },
+  {
+    "language": "en",
+    "namespace": "common",
+    "code": "send_feedback_button_title",
+    "value": "send_feedback_button_title"
+  },
+  {
+    "language": "en",
+    "namespace": "common",
+    "code": "switcher_for_companies",
+    "value": "switcher_for_companies"
+  },
+  {
+    "language": "en",
+    "namespace": "common",
+    "code": "switcher_for_engineers",
+    "value": "switcher_for_engineers"
+  },
+  {
+    "language": "en",
+    "namespace": "common",
+    "code": "web3_companies_subtitle",
+    "value": "web3_companies_subtitle"
+  },
+  {
+    "language": "en",
+    "namespace": "common",
+    "code": "web3_companies_title",
+    "value": "web3_companies_title"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
+    "code": "backend_new_hero_company_name",
+    "value": "backend_new_hero_company_name"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
+    "code": "backend_new_hero_vacancy_salary",
+    "value": "backend_new_hero_vacancy_salary"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
+    "code": "backend_new_hero_vacancy_title",
+    "value": "backend_new_hero_vacancy_title"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
+    "code": "build_future_desc",
+    "value": "build_future_desc"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
+    "code": "build_future_term",
+    "value": "build_future_term"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
+    "code": "candidate_chat_nft_step",
+    "value": "candidate_chat_nft_step"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
+    "code": "candidate_create_nft_step",
+    "value": "candidate_create_nft_step"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
+    "code": "candidate_nft_offer_step",
+    "value": "candidate_nft_offer_step"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
+    "code": "choose_nft_title",
+    "value": "choose_nft_title"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
+    "code": "discover_jobs",
+    "value": "discover_jobs"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
+    "code": "frontend_new_hero_company_name",
+    "value": "frontend_new_hero_company_name"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
+    "code": "frontend_new_hero_vacancy_salary",
+    "value": "frontend_new_hero_vacancy_salary"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
+    "code": "frontend_new_hero_vacancy_title",
+    "value": "frontend_new_hero_vacancy_title"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
+    "code": "fullstack_new_hero_company_name",
+    "value": "fullstack_new_hero_company_name"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
+    "code": "fullstack_new_hero_vacancy_salary",
+    "value": "fullstack_new_hero_vacancy_salary"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
+    "code": "fullstack_new_hero_vacancy_title",
+    "value": "fullstack_new_hero_vacancy_title"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
+    "code": "homepage_web3_title",
+    "value": "homepage_web3_title"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
+    "code": "mobile_new_hero_company_name",
+    "value": "mobile_new_hero_company_name"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
+    "code": "mobile_new_hero_vacancy_salary",
+    "value": "mobile_new_hero_vacancy_salary"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
+    "code": "mobile_new_hero_vacancy_title",
+    "value": "mobile_new_hero_vacancy_title"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
+    "code": "new_hero_vacancy_location",
+    "value": "new_hero_vacancy_location"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
+    "code": "new_homepage_signup_button_text",
+    "value": "new_homepage_signup_button_text"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
+    "code": "new_homepage_signup_end",
+    "value": "new_homepage_signup_end"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
+    "code": "new_homepage_signup_title",
+    "value": "new_homepage_signup_title"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
+    "code": "new_homepage_subtitle",
+    "value": "new_homepage_subtitle"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
+    "code": "nft_backend_dev_position",
+    "value": "nft_backend_dev_position"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
+    "code": "nft_backend_dev_remote",
+    "value": "nft_backend_dev_remote"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
+    "code": "nft_backend_dev_salary",
+    "value": "nft_backend_dev_salary"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
+    "code": "nft_backend_dev_techs",
+    "value": "nft_backend_dev_techs"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
+    "code": "nft_blockchain_dev_position",
+    "value": "nft_blockchain_dev_position"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
+    "code": "nft_blockchain_dev_remote",
+    "value": "nft_blockchain_dev_remote"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
+    "code": "nft_blockchain_dev_salary",
+    "value": "nft_blockchain_dev_salary"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
+    "code": "nft_blockchain_dev_techs",
+    "value": "nft_blockchain_dev_techs"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
+    "code": "nft_chat_first_message",
+    "value": "nft_chat_first_message"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
+    "code": "nft_chat_offer",
+    "value": "nft_chat_offer"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
+    "code": "nft_chat_second_message",
+    "value": "nft_chat_second_message"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
+    "code": "pick_right_job_desc",
+    "value": "pick_right_job_desc"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
+    "code": "pick_right_job_term",
+    "value": "pick_right_job_term"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
+    "code": "salary_hike_desc",
+    "value": "salary_hike_desc"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
+    "code": "salary_hike_term",
+    "value": "salary_hike_term"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
+    "code": "web2_start",
+    "value": "web2_start"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
+    "code": "web3_finish",
+    "value": "web3_finish"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
+    "code": "web3_reviews_title",
+    "value": "web3_reviews_title"
+  },
+  {
+    "language": "en",
+    "namespace": "home",
+    "code": "web3_transition_title",
+    "value": "web3_transition_title"
+  },
+  {
+    "language": "en",
+    "namespace": "profile",
+    "code": "recruiter_profile_companyinfo_tab",
+    "value": "recruiter_profile_companyinfo_tab"
+  },
+  {
+    "language": "en",
+    "namespace": "validations",
+    "code": "Please enter correct Linkedin link",
+    "value": "Please enter correct Linkedin link"
+  }
+]

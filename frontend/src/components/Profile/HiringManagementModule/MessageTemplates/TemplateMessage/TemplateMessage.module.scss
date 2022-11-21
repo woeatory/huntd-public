@@ -1,0 +1,22 @@
+@import "utils";
+
+.templateTitle {
+  @extend %button-reset;
+  @extend %typography-inter-14;
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  padding: rem-calc(16) rem-calc(24);
+  color: $c-semidark-chocolate;
+  background-color: $c-white;
+  border: 1px solid $c-transparent;
+  border-radius: 4px;
+  box-shadow: 0 0 4px rgba(114, 110, 108, 0.12);
+  transition: border-color $duration $easing;
+
+  &:hover {
+    border: 1px solid $c-citrus;
+  }
+}
+
+

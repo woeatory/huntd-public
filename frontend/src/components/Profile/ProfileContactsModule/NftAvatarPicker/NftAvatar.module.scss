@@ -1,0 +1,26 @@
+@import "utils";
+
+.avatarWrapper {
+  position: relative;
+}
+
+.iconWrapper {
+  position: absolute;
+  top: 0;
+
+  @include icon-styles {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 130px;
+    height: 130px;
+  }
+}
+
+.hexagonWrapper {
+  position: relative;
+  width: 110px;
+  height: 110px;
+  clip-path: polygon(50% 0%, 94% 25%, 94% 75%, 50% 100%, 6% 75%, 6% 25%);
+  background: linear-gradient(180deg, rgba(255, 186, 170, 0.8) 0%, #C2EDFF 100%);
+}

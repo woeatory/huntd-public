@@ -1,0 +1,11 @@
+@import "utils";
+
+.iconWrapper {
+  @include icon-styles {
+    width: rem-calc(16);
+    height:  rem-calc(16);
+    margin-right: rem-calc(-32);
+    margin-bottom: rem-calc(-4);
+    color: $c-citrus;
+  }
+}

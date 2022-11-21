@@ -1,0 +1,9 @@
+@import "utils";
+
+.stepper {
+  position: relative;
+  @include breakpoint(medium down) {
+    width: 100%;
+    min-width: 250px;
+  }
+}

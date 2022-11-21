@@ -1,0 +1,76 @@
+@import "utils";
+
+.nav {
+  display: flex;
+  gap: rem-calc(32);
+  align-items: center;
+  justify-content: flex-start;
+
+  @include breakpoint(medium down) {
+    gap: rem-calc(24);
+  }
+
+  @include breakpoint(small down) {
+    gap: rem-calc(16);
+  }
+}
+
+.switcher {
+  flex-basis: rem-calc(284);
+  flex-shrink: 0;
+
+  @include breakpoint(medium down) {
+    display: none;
+  }
+}
+
+.navLink {
+  @extend %hover-underline;
+  @extend %typography-inter-12-caps;
+  color: $c-gray;
+
+  &:global(#{$active}) {
+    color: $c-semidark-chocolate;
+    @extend %typography-inter-12-bold-caps;
+  }
+}
+
+.communityLink{
+  @extend %typography-inter-12-bold-caps;
+  display: flex;
+  align-items: center;
+  width: max-content;
+  color: $c-citrus;
+  text-decoration: none;
+
+  @include icon-styles {
+    transition: transform $duration $easing;
+
+    @include breakpoint(medium down) {
+      display: none;
+    }
+  }
+
+  &:hover {
+    @include icon-styles {
+      transform: translateX(5px) rotate(30deg);
+    }
+  }
+}
+
+.communityLinkContainer {
+  position: relative;
+
+  @include breakpoint(small down) {
+    display: none;
+  }
+}
+
+.desktopLinks {
+  display: flex;
+  gap: rem-calc(24);
+  align-items: center;
+  @include breakpoint(small down) {
+    display: none;
+  }
+}

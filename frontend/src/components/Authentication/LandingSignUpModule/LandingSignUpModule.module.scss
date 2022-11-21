@@ -1,0 +1,20 @@
+@import 'utils';
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.socialButton {
+  border-color: $c-citrus;
+
+  &:not(:last-child) {
+    margin-right: rem-calc(16);
+  }
+}
+
+.dividerContainer {
+  display: flex;
+}

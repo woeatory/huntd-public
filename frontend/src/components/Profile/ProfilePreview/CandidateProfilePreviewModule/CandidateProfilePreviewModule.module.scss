@@ -1,0 +1,75 @@
+@import "utils";
+
+.attachedCv {
+  display: flex;
+  align-items: center;
+  color: $c-citrus;
+}
+
+.cvLink {
+  @extend %typography-inter-14;
+  margin-right: rem-calc(8);
+  color: currentColor;
+  text-decoration: none;
+  transition: color $duration $easing;
+}
+
+.arrowLink {
+  color: $c-citrus;
+  transition: transform $duration $easing;
+  transform: rotate(135deg);
+
+  @include icon-styles {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.attachedCv:hover .arrowLink {
+  transform: rotate(135deg) translate(-8px);
+}
+
+.publicProfileButton {
+  display: flex;
+  align-items: center;
+
+  @include icon-styles {
+    width: 16px;
+    height: 16px;
+    margin-left: 4px;
+  }
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  color: $c-citrus;
+  text-decoration: none;
+
+  @extend %typography-inter-14;
+
+  @include icon-styles {
+    width: 20px;
+    height: 20px;
+    margin-left: 4px;
+    transition: transform $duration $easing;
+    transform: rotate(135deg);
+  }
+
+  &:hover {
+    @include icon-styles {
+      transform: rotate(135deg) translate(-8px);
+    }
+  }
+}
+
+.emailLink {
+  @extend %hover-underline;
+  font-weight: $font-weight_regular;
+  color: $c-semidark-chocolate;
+}
+
+.title {
+  hyphens: auto;
+  overflow-wrap: break-word;
+}

@@ -1,0 +1,81 @@
+@import 'utils';
+
+.disabledFilters {
+  @include covers-parent;
+  background: $c-white;
+  opacity: 0;
+  transition: opacity $duration $easing;
+
+  &:hover {
+    overflow-y: hidden;
+    opacity: 1;
+  }
+
+  @include breakpoint(medium down) {
+    display: none;
+  }
+}
+
+.disabledFiltersMobile {
+  @extend .disabledFilters;
+
+  @include breakpoint(medium) {
+    display: none;
+  }
+
+  @include breakpoint(medium down) {
+    display: block;
+    opacity: 1;
+  }
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: rem-calc(0 32);
+  margin-top: rem-calc(128);
+  word-wrap: break-word;
+}
+
+.title {
+  text-align: center;
+}
+
+.benefitsList {
+  display: flex;
+  flex-direction: column;
+  align-content: stretch;
+  align-items: flex-start;
+  margin-bottom: rem-calc(40);
+}
+
+.benefitItem {
+  @include icon-styles {
+    flex-shrink: 0;
+    margin-right: rem-calc(12);
+    color: $c-citrus;
+  }
+
+  display: inline-flex;
+  align-items: center;
+
+  &:not(:last-child) {
+    margin-bottom: rem-calc(8);
+  }
+}
+
+.buttonsContainer {
+  display: flex;
+  gap: rem-calc(20);
+  width: 100%;
+  max-width: 100%;
+}
+
+.button {
+  display: inline-flex;
+  flex: 1 0 auto;
+  align-items: center;
+  justify-content: center;
+}

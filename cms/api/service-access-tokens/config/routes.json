@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/service-access-tokens",
+      "handler": "service-access-tokens.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/service-access-tokens/count",
+      "handler": "service-access-tokens.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/service-access-tokens/:id",
+      "handler": "service-access-tokens.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/service-access-tokens",
+      "handler": "service-access-tokens.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/service-access-tokens/:id",
+      "handler": "service-access-tokens.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/service-access-tokens/:id",
+      "handler": "service-access-tokens.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

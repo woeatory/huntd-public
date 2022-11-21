@@ -1,0 +1,157 @@
+@import "utils";
+
+.slide {
+  display: flex;
+}
+
+.sliderWrapper {
+  padding: rem-calc(40);
+
+  @include breakpoint(small down) {
+    padding: rem-calc(56 8 8);
+  }
+}
+
+.button {
+  color: $c-gray;
+
+  @include hover(color, $c-citrus);
+}
+
+.buttonsWrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  display: flex;
+  gap: rem-calc(24);
+  align-items: center;
+  align-self: flex-end;
+  width: fit-content;
+
+  @include icon-styles {
+    width: 32px;
+    height: 32px;
+  }
+
+  @include breakpoint(medium down) {
+    display: flex;
+    justify-content: center;
+    margin-top: rem-calc(48);
+  }
+
+  @include breakpoint(small down) {
+    margin-top: rem-calc(24);
+  }
+}
+
+.reviewWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100%;
+}
+
+.reviewBody {
+  flex-shrink: 1;
+  margin-bottom: rem-calc(24);
+
+  @include breakpoint(small down) {
+    font-size: rem-calc(18);
+  }
+}
+
+.reviewerWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.reviewerInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.reviewerPosition {
+  @extend %typography-inter-16;
+}
+
+.photo {
+  position: relative;
+  width: rem-calc(80);
+  height: rem-calc(80);
+  margin-right: rem-calc(32);
+
+  & > * {
+    border-radius: 50%;
+  }
+
+  @include breakpoint(medium down) {
+    max-width: rem-calc(85);
+    max-height: rem-calc(85);
+  }
+}
+
+.reviewCard {
+  position: relative;
+  display: flex;
+  width: 400px;
+  padding: rem-calc(24 32);
+  background-color: $c-white;
+  border-radius: rem-calc(16);
+  box-shadow: 2px 8px 32px rgba(126, 130, 132, 0.16);
+
+  @include breakpoint(large) {
+
+    &:nth-child(even) {
+      margin-left: rem-calc(52);
+    }
+  }
+
+  @include breakpoint(small down) {
+    padding: rem-calc(64 32 32);
+    margin-bottom: rem-calc(24);
+  }
+}
+
+.icon {
+  position: absolute;
+  top: 24px;
+  left: -24px;
+  color: $c-citrus;
+
+  @include icon-styles {
+    width: 32px;
+    height: 44px;
+  }
+
+  @include breakpoint(medium down) {
+    top: 12px;
+    left: -16px;
+  }
+
+  @include breakpoint(small down) {
+    top: 12px;
+    left: 12px;
+  }
+}
+
+.title {
+  text-align: center;
+  @extend %typography-inter-48-bold;
+  @include breakpoint(medium down) {
+    font-size: rem-calc(32);
+  }
+  @include breakpoint(small down) {
+    font-size: rem-calc(24);
+  }
+
+  strong {
+    color: transparent;
+    background: linear-gradient(
+      0.25turn,
+      #F35A35 0%,
+      #C2EDFF 100%
+    );
+    background-clip: text;
+  }
+}

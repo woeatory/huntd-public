@@ -1,0 +1,10 @@
+@import 'utils';
+
+.submitButton {
+  position: sticky;
+  bottom: rem-calc(32);
+
+  @include breakpoint(small down) {
+    bottom: rem-calc(8);
+  }
+}

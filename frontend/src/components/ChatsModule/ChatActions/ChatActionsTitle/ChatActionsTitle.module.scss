@@ -1,0 +1,9 @@
+@import "utils";
+
+.chatActionsTitle {
+  margin: 0 rem-calc(8);
+
+  @include breakpoint(small down) {
+    display: none;
+  }
+}

@@ -1,0 +1,33 @@
+overwrite: true
+schema:
+  - "api/src/modules/**/*.schema.ts"
+  - |
+      scalar Upload
+generates:
+  api/src/graphql/generated.ts:
+    documents:
+      - "api/src/modules/**/*.queries.api/**.ts"
+      - "api/src/modules/**/*.fragments.api/**.ts"
+    plugins:
+      - "typescript"
+      - "typescript-operations"
+      - "typescript-graphql-request"
+    config:
+      rawRequest: true
+      scalars:
+        GraphQLDateTime: string
+        Upload: any
+  cms/src/controllers/graphql/api/api.request.generated.ts:
+    documents:
+      - "api/src/modules/**/*.queries.cms/**.ts"
+      - "api/src/modules/**/*.fragments.cms/**.ts"
+    plugins:
+      - "typescript"
+      - "typescript-operations"
+      - "typescript-graphql-request"
+    config:
+      gqlImport: '@apollo/client#gql'
+      pureMagicComment: true
+      scalars:
+        GraphQLDateTime: string
+        Upload: any

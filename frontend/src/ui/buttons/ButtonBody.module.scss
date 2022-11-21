@@ -1,0 +1,16 @@
+@import "utils";
+
+.iconLeft,
+.iconRight {
+  flex-shrink: 0;
+}
+
+.iconLeft {
+  margin-right: rem-calc(4);
+  margin-left: -4px;
+}
+
+.iconRight {
+  margin-right: -4px;
+  margin-left: rem-calc(4);
+}

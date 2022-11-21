@@ -1,0 +1,19 @@
+overwrite: true
+schema:
+  - "api/src/modules/**/*.schema.ts"
+  - |
+    scalar Upload
+documents:
+  - "api/src/modules/**/*.queries.serverless/**.ts"
+  - "api/src/modules/**/*.fragments.serverless/**.ts"
+generates:
+  serverless/huntd-graphql-serverless/src/graphql/generated.serverless.ts:
+    plugins:
+      - "typescript"
+      - "typescript-operations"
+      - "typescript-graphql-request"
+    config:
+      rawRequest: true
+      scalars:
+        GraphQLDateTime: string
+        Upload: any

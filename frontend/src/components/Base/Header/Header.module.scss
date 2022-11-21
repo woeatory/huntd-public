@@ -1,0 +1,113 @@
+@import "utils";
+
+.header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 10;
+  padding-right: var(--scrollbar-width);
+  background-color: $c-white;
+
+  &::after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    content: "";
+    background-color: $c-light-gray;
+  }
+}
+
+.headerContainer {
+  align-items: center;
+  height: var($header-height);
+
+  @include with-admin-panel {
+    height: calc(var(#{$header-height}) - var(#{$admin-panel-height}));
+    margin-top: var($admin-panel-height);
+  }
+}
+
+.logoNavContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.headerActions {
+  display: flex;
+  gap: rem-calc(16);
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.mobileSwitcherContainer {
+  position: fixed;
+  top: calc(var(#{$header-height}));
+  right: 0;
+  left: 0;
+  z-index: 9;
+  padding-top: rem-calc(16);
+  padding-bottom: rem-calc(8);
+  background: rgba($c-white, .75);
+
+  @include breakpoint(large) {
+    display: none;
+  }
+
+  @include breakpoint(small down) {
+    z-index: 2;
+    padding-top: rem-calc(8);
+  }
+}
+
+.feedbackButton {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  color: $c-citrus;
+  background-color: $c-light-peach;
+  border: 1px solid $c-citrus;
+  border-radius: 50%;
+  transition:
+    color $duration $easing,
+    background-color $duration $easing
+  ;
+
+  &:hover {
+    color: $c-white;
+    background-color: $c-citrus;
+  }
+
+  &:global(#{$hidden}) {
+    display: none;
+  }
+
+  @include breakpoint(medium) {
+    position: fixed;
+    right: 8px;
+    bottom: rem-calc(88);
+    width: 48px;
+    height: 48px;
+    border-color: transparent;
+  }
+
+  @include breakpoint(large) {
+    right: rem-calc(8);
+    bottom: rem-calc(94);
+  }
+
+  @include breakpoint(xlarge) {
+    right: calc(#{rem-calc(128)} - 70px);
+    bottom: rem-calc(164);
+  }
+
+  @include breakpoint(xxlarge) {
+    right: calc(((100vw - 90rem) / 2 + 58px));
+  }
+ }

@@ -1,0 +1,37 @@
+@import "utils";
+
+.chatBox {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - var(--header-with-alert-height));
+  color: $c-gray;
+  @include breakpoint(medium down) {
+    position: fixed;
+    top: var($header-with-alert-height);
+    left: 0;
+    width: 100%;
+    visibility: hidden;
+    background-color: $c-white;
+    opacity: 0;
+    transition: transform $duration $easing, opacity $duration $easing,
+      visibility 0s $duration;
+    transform: translateX(20%);
+    &:global(#{$active}) {
+      visibility: visible;
+      opacity: 1;
+      transition-delay: 0s;
+      transform: none;
+    }
+  }
+
+  @include breakpoint(small down) {
+    height: calc(100% - var(--header-with-alert-height));
+  }
+}
+
+// ::after pseudo element with border to fix position: sticky in mozilla
+
+.chatBox::after {
+  content: "";
+  border: 1px solid transparent;
+}

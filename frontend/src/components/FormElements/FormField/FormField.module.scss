@@ -1,0 +1,22 @@
+@import "utils";
+
+.fieldWrapper {
+  //  TODO: add something here
+}
+
+.label {
+  display: inline-flex;
+  align-items: flex-end;
+  @extend %typography-inter-14;
+  color: $c-gray;
+}
+
+.inputBlock {
+  //  TODO: add something here
+}
+
+.metaBlock {
+  @extend %typography-inter-12;
+  position: absolute;
+  color: $c-error;
+}

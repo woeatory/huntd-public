@@ -1,0 +1,11 @@
+@import "utils";
+
+.locationTitle {
+  display: flex;
+  align-items: center;
+}
+
+.locationTooltip {
+  margin-left: rem-calc(8);
+}
+

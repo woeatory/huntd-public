@@ -1,0 +1,29 @@
+@import "utils";
+
+.templatesHeader {
+  @extend %typography-inter-12-bold-caps;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: $c-gray;
+}
+
+.templatesSection {
+  overflow: hidden;
+}
+
+.newTemplateButton {
+  @extend %button-reset;
+  @extend %typography-inter-12-bold-caps;
+  padding: rem-calc(12);
+  color: $c-citrus;
+
+  &:focus {
+    outline-color: transparent;
+  }
+}
+
+.newTemplateButtonText {
+  @extend %hover-underline;
+}
+

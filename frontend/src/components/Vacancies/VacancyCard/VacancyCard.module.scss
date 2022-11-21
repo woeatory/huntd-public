@@ -1,0 +1,173 @@
+@import "utils";
+
+.vacancyCardWrapper {
+  background-color: $c-white;
+  border: 1px solid $c-transparent;
+  border-radius: 4px;
+  box-shadow: 0 0 4px rgba(114, 110, 108, 0.12);
+  @include hover(border, 1px solid $c-citrus);
+}
+
+.vacancyCard {
+  display: grid;
+  grid-template-areas: "company details detailsButton status";
+  grid-template-columns: 35% 1fr 1fr 15%;
+  column-gap: rem-calc(8);
+  align-items: center;
+  justify-items: start;
+  width: 100%;
+  padding: rem-calc(16 24);
+  color: $c-semidark-chocolate;
+  text-align: inherit;
+  @extend %typography-inter-14;
+  @extend %button-reset;
+
+  @include breakpoint(medium down) {
+    grid-template-areas:
+    "company details status"
+    "company details detailsButton";
+    grid-template-rows: auto;
+    grid-template-columns: 40% 1fr 1fr;
+    padding: rem-calc(16);
+  }
+
+  @include breakpoint(small down) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.companyInfo {
+  display: flex;
+  grid-area: company;
+  align-items: center;
+  justify-content: space-between;
+
+  @include breakpoint(small down) {
+    order: 1;
+  }
+}
+
+.logoContainer {
+  flex-shrink: 0;
+  width: rem-calc(48);
+  height: rem-calc(48);
+  padding: rem-calc(4);
+  background-color: $c-white;
+  border: 1px solid $c-citrus;
+  border-radius: 4px;
+}
+
+.logo {
+  object-fit: contain;
+}
+
+.sourced {
+  min-width: rem-calc(48);
+}
+
+.companyName {
+  @extend %typography-inter-14;
+  color: $c-gray;
+}
+
+.position {
+  @extend %typography-inter-16;
+  padding-right: rem-calc(8);
+}
+
+.details {
+  @extend %typography-inter-14;
+  grid-area: details;
+  color: $c-gray;
+
+  @include breakpoint(small down) {
+    align-self: flex-start;
+    order: 2;
+    margin-top: rem-calc(24);
+  }
+}
+
+.jobDetails {
+  display: inline-flex;
+}
+
+.divider {
+  align-self: center;
+  width: rem-calc(4);
+  height: rem-calc(4);
+  margin: rem-calc(0 10);
+  background-color: $c-citrus;
+  border-radius: 50%;
+}
+
+.detailsItem {
+  display: flex;
+  align-items: center;
+  width: max-content;
+}
+
+.salary {
+  display: flex;
+  gap: 2px;
+  color: $c-citrus;
+}
+
+.detailsButton {
+  display: flex;
+  grid-area: detailsButton;
+  align-items: center;
+  justify-self: center;
+
+  @include icon-styles {
+    margin-left: rem-calc(8);
+  }
+
+  @include breakpoint(medium down) {
+    margin-top: rem-calc(8);
+  }
+
+  @include breakpoint(small down) {
+    align-self: center;
+    order: 4;
+  }
+}
+
+.detailedInfo {
+  max-height: 0;
+  visibility: hidden;
+  opacity: 0;
+  transition:
+    transform $duration $easing,
+    opacity $duration $easing,
+    height $duration $easing .1s;
+  transform: scaleY(0);
+
+  &:global(#{$active}) {
+    max-height: max-content;
+    visibility: visible;
+    opacity: 1;
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+}
+
+.status {
+  grid-area: status;
+  justify-self: center;
+
+  @include breakpoint(medium down) {
+    justify-self: center;
+    margin-bottom: rem-calc(4);
+  }
+
+  @include breakpoint(small down) {
+    align-self: center;
+    order: 3;
+    margin-top: rem-calc(56);
+    margin-bottom: rem-calc(16);
+  }
+}
+
+

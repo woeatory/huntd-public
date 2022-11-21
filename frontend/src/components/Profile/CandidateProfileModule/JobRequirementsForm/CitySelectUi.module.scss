@@ -1,0 +1,9 @@
+.select {
+
+  :global(.pac-target-input) {
+
+    &::placeholder {
+      color: transparent !important;
+    }
+  }
+}

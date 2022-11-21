@@ -1,0 +1,68 @@
+@import 'utils';
+
+.heroBlockWrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: rem-calc(152);
+  text-align: center;
+
+  @include breakpoint(small down) {
+    margin-bottom: rem-calc(78);
+  }
+}
+
+.globeBlockContainer {
+  @include breakpoint(small down) {
+    width: 425px;
+    height: 100%;
+  }
+}
+
+.globeBlockOuterContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  @include breakpoint(small down) {
+    width: 100vw;
+    height: 135px;
+    margin-right: -8px;
+    margin-left: -8px;
+    overflow: hidden;
+  }
+}
+
+.title {
+  @extend %typography-inter-48-bold;
+
+  @include breakpoint(small down) {
+    font-size: rem-calc(32);
+  }
+
+  strong {
+    color: transparent;
+    background: linear-gradient(
+      0.25turn,
+      #F35A35 0%,
+      #C2EDFF 100%
+    );
+    background-clip: text;
+  }
+}
+
+.subtitle {
+  @extend %typography-inter-18;
+  color: $c-semidark-chocolate;
+
+  @include breakpoint(small down) {
+    font-size: rem-calc(16);
+  }
+}
+
+.containerForVacancies {
+  position: relative;
+}
+

@@ -1,0 +1,87 @@
+@import "utils";
+
+.toolTip {
+  position: absolute;
+  left: 50%;
+  z-index: 12;
+  width: rem-calc(256);
+  padding: rem-calc(8);
+  color: $c-bg;
+  background-color: $c-semidark-chocolate;
+  border-radius: 4px;
+  opacity: 0;
+  transition: opacity $duration $easing;
+  transform: translateX(-50%);
+
+  &::before,
+  &::after {
+    position: absolute;
+    left: calc(50% - 4px);
+    width: 8px;
+    height: 8px;
+    content: "";
+    background-color: $c-semidark-chocolate;
+    transform: rotate(45deg);
+  }
+
+  @include breakpoint(medium down) {
+    left: 0;
+    width: rem-calc(200);
+    transform: none;
+
+    &::after, &::before {
+      left: rem-calc(8);
+    }
+  }
+
+}
+
+.toolTipBottom{
+  top: calc(100% + 16px);
+
+  &::before {
+    top: -4px;
+  }
+
+  &::after {
+    display: none;
+  }
+}
+
+.toolTipTop {
+  bottom: calc(100% + 16px);
+
+  &::after {
+    bottom: -4px;
+  }
+
+  &::before {
+    display: none;
+  }
+}
+
+.wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.icon {
+  display: flex;
+
+  @include icon-styles {
+    color: $c-gray;
+    transition: color $duration $easing;
+  }
+
+  &:hover {
+
+    +.toolTip {
+      cursor: pointer;
+      opacity: 1;
+    }
+
+    @include icon-styles {
+      color: $c-citrus;
+    }
+  }
+}

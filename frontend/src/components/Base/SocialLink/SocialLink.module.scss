@@ -1,0 +1,14 @@
+@import "utils";
+
+.socialIcon {
+  margin-right: rem-calc(32);
+  color: $c-current;
+  @include hover(color, $c-citrus);
+  @include breakpoint(medium down) {
+    margin-right: rem-calc(24);
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}

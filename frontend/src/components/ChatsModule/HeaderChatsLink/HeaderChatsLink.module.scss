@@ -1,0 +1,18 @@
+@import "utils";
+
+.chatsLink {
+  display: flex;
+  align-items: center;
+}
+
+.unreadMessagesCount {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: rem-calc(24);
+  height: rem-calc(24);
+  margin-left: rem-calc(8);
+  color: $c-white;
+  background-color: $c-citrus;
+  border-radius: 50%;
+}

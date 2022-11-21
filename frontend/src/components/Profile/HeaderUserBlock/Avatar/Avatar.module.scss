@@ -1,0 +1,79 @@
+@import "utils";
+
+.userAvatar {
+  position: relative;
+  width: rem-calc(32);
+  height: rem-calc(32);
+  margin-right: rem-calc(12);
+  border-radius: 50%;
+
+  &::after {
+    position: absolute;
+    top: 0;
+    display: block;
+    width: rem-calc(34);
+    height: rem-calc(34);
+    margin: -2px 0 0 -2px;
+    content: "";
+    border: 1px dashed $c-gray;
+    border-radius: 50%;
+    transition: transform 0.1s $easing;
+  }
+
+  &:hover {
+
+    &::after {
+      transition-duration: 10s;
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.userAvatarPhoto {
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.userAvatarEmpty {
+  display: inline-block;
+  width: rem-calc(32);
+  height: rem-calc(32);
+  margin-right: rem-calc(12);
+  background: $c-gray;
+  border-radius: 50%;
+
+  &::after {
+    display: block;
+    width: rem-calc(34);
+    height: rem-calc(34);
+    margin: -2px 0 0 -2px;
+    content: "";
+    border: 1px dashed $c-gray;
+    border-radius: 50%;
+    transition: transform 0.1s $easing;
+  }
+
+  &:hover {
+
+    &::after {
+      transition-duration: 10s;
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.userAvatarActive {
+  background: $c-citrus;
+
+  &::after {
+    border: 1px dashed $c-citrus;
+  }
+}
+
+.userAvatarRejected {
+  background: $c-error;
+
+  &::after {
+    border: 1px dashed $c-error;
+  }
+}

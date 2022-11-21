@@ -1,0 +1,56 @@
+@import "utils";
+
+.metaWrapper {
+  @include icon-styles {
+    width: 18px;
+    height: 18px;
+    margin-right: rem-calc(4);
+    color: $c-semidark-chocolate;
+  }
+
+  display: flex;
+  flex-wrap: wrap;
+
+  @include breakpoint(small down) {
+    width: 100%;
+  }
+}
+
+.baseItem {
+  color: currentColor;
+}
+
+.metaItem {
+  display: flex;
+  align-items: center;
+
+  &:last-child {
+
+    .divider {
+      display: none;
+    }
+  }
+}
+
+.recruiterMetaItem {
+  @extend .baseItem;
+  display: inline-block;
+  @include text-truncate;
+
+  &:not(:last-child) {
+
+    &::after {
+      margin: rem-calc(0 24);
+      content: '|';
+    }
+  }
+}
+
+.divider {
+  width: rem-calc(4);
+  height: rem-calc(4);
+  margin: rem-calc(0 10);
+  color: var(--icon-color, currentColor);
+  background-color: $c-citrus;
+  border-radius: 50%;
+}

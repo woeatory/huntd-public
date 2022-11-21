@@ -1,0 +1,80 @@
+@import "utils";
+
+@keyframes slide {
+
+  from {
+    opacity: 0;
+    transform: translateX(20%);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.item {
+  display: grid;
+  grid-template-areas:
+    "status-icon status-icon title close-button"
+    "text text text text"
+    "link link link link";
+  grid-template-columns: 2px 24px 1fr 24px;
+  grid-gap: 8px;
+  padding: rem-calc(16);
+  margin-bottom: rem-calc(16);
+  background-color: $c-bg;
+  border: 1px solid $c-current;
+  border-radius: 4px;
+  box-shadow: 0 4px 16px rgba(209, 204, 201, 0.6);
+  animation: slide $duration $ease-out;
+
+  &:global(.info) {
+    color: $c-info;
+  }
+
+  &:global(.success) {
+    color: $c-success;
+  }
+
+  &:global(.warning) {
+    color: $c-warning;
+  }
+
+  &:global(.error) {
+    color: $c-error;
+  }
+
+  @include breakpoint(small down) {
+    margin-bottom: rem-calc(8);
+  }
+}
+
+.statusIcon {
+  display: flex;
+  grid-area: status-icon;
+  align-self: center;
+}
+
+.closeButton {
+  @extend %button-reset;
+  display: flex;
+  grid-area: close-button;
+  color: $c-gray;
+  @include hover(color, $c-citrus);
+}
+
+.profileTitle {
+  grid-area: title;
+  align-self: center;
+}
+
+.text {
+  grid-area: text;
+}
+
+.ctaBtn {
+  grid-area: link;
+  width: max-content;
+  padding: rem-calc(8) rem-calc(32);
+}

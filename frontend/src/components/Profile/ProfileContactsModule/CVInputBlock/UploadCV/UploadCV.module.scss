@@ -1,0 +1,15 @@
+@import "utils";
+
+.uploadCv {
+  @extend %typography-inter-12-bold-caps;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $c-citrus;
+  cursor: pointer;
+  border-color: $c-citrus;
+
+  @include icon-styles {
+    margin-right: rem-calc(8);
+  }
+}

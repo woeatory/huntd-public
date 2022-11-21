@@ -1,0 +1,63 @@
+@import "utils";
+
+.messageBox {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: rem-calc(24);
+  @include webkit-smoothscroll;
+  @include with-loader {
+    background-color: $c-white;
+  }
+}
+
+.emptyMessage {
+  @extend %typography-inter-24-bold;
+  margin: auto;
+  color: $c-light-gray;
+}
+
+.messageDivider {
+  @extend %typography-inter-12;
+  position: sticky;
+  top: rem-calc(-24);
+  z-index: 1;
+  padding: rem-calc(12);
+  margin-bottom: rem-calc(24);
+  text-align: center;
+  background-color: $c-white;
+
+  @include breakpoint(medium down) {
+    padding: rem-calc(8 12);
+  }
+}
+
+.emptyMessageHeading {
+  border-bottom: 1px solid  $c-void;
+}
+
+.mobileAppBoxContainer,
+.connectionsBoxContainer {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - var(--header-height));
+}
+
+.connectionsBoxContainer {
+  align-items: center;
+  justify-content: center;
+}
+
+.connectionsProgressBar {
+  width: 72px;
+  height: 72px;
+}
+
+.connectionsBoxContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  text-align: center;
+}

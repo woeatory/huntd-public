@@ -1,0 +1,48 @@
+@mixin icon-styles {
+
+  :global([class*="icon-"]) {
+    @content;
+  }
+}
+
+@mixin disabled {
+  &#{$disabled},
+  &[disabled] {
+    @content;
+  }
+}
+
+@mixin invalid {
+  &#{$invalid},
+  &[aria-invalid] {
+    @content;
+  }
+}
+
+@mixin with-loader {
+  position: relative;
+
+  :global(.loader) {
+    @content;
+  }
+}
+
+@mixin with-unread-mark {
+  position: relative;
+
+  :global(.unread-mark) {
+    @content;
+  }
+}
+
+@mixin with-modal {
+  :global(#{$has-modal}) & {
+    @content;
+  }
+}
+
+@mixin with-admin-panel {
+  :global(#{$admin-panel-visible}) & {
+    @content;
+  }
+}

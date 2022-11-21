@@ -1,0 +1,53 @@
+@import "utils";
+
+.tabsWrapper {
+  display: flex;
+  gap: rem-calc(10);
+  justify-content: space-between;
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  @include breakpoint(small down) {
+    gap: rem-calc(16);
+  }
+}
+
+.tab {
+  @extend %button-reset;
+  position: relative;
+  padding-bottom: rem-calc(8);
+  text-align: initial;
+  outline: none;
+
+  &:after {
+    position: absolute;
+    bottom: rem-calc(-2);
+    width: 100%;
+    height: rem-calc(3);
+    content: "";
+    background: transparent;
+  }
+
+  @include active() {
+
+    &:after {
+      background: $c-citrus;
+    }
+  }
+}
+
+.tabName {
+  @extend %typography-inter-12-caps;
+  bottom: rem-calc(8);
+  width: max-content;
+  color: $c-semidark-chocolate;
+
+  @include active() {
+    color: $c-citrus;
+  }
+}
+
+.tabsLine {
+  height: rem-calc(1);
+  background-color: $c-light-gray;
+}

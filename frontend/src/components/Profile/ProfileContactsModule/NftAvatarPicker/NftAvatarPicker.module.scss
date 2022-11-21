@@ -1,0 +1,45 @@
+@import "utils";
+
+.nftModal {
+  position: relative;
+}
+
+.nftCart {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  padding: rem-calc(32) rem-calc(40);
+  background-color: $c-white;
+  border-bottom: 1px solid #DDE2E4;
+  box-shadow: 0 4px 16px 0 transparentize($c-light-gray, 0.5);
+}
+
+.closeModalButton {
+  @extend %button-reset;
+  position: absolute;
+  top: rem-calc(32);
+  right: rem-calc(32);
+  z-index: 3;
+}
+
+.nftGallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+  padding: rem-calc(40);
+
+  @include breakpoint(small down) {
+    justify-content: center;
+  }
+}
+
+.nftItem {
+  cursor: pointer;
+}
+
+.takenNft {
+  cursor: not-allowed;
+  filter: grayscale(100%);
+}

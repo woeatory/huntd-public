@@ -1,0 +1,10 @@
+@import "utils";
+
+.userBlockWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  @include breakpoint(small down) {
+    display: none;
+  }
+}

@@ -1,0 +1,10 @@
+@import 'utils';
+
+.buttonsContainer {
+  display: flex;
+  gap: rem-calc(24);
+}
+
+.button {
+  flex: 0 1 50%;
+}

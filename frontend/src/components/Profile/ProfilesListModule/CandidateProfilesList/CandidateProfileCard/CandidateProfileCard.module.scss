@@ -1,0 +1,195 @@
+@import "utils";
+
+.profileCard {
+  display: grid;
+  grid-template-areas:
+    "head head"
+    "head head"
+    "info info"
+    "message more";
+  grid-template-columns: 1fr auto;
+  gap: rem-calc(16);
+  padding: rem-calc(24 32);
+  color: $c-gray;
+  cursor: pointer;
+  border: 1px solid $c-transparent;
+  border-radius: rem-calc(4);
+  box-shadow: 0 0 16px rgba(126, 130, 132, 0.08);
+
+  @include hover(border, 1px solid $c-peach);
+
+  @include breakpoint(small down) {
+    display: flex;
+    flex-direction: column;
+    padding: rem-calc(0 0);
+    box-shadow: none;
+
+    @include hover(border, 1px solid $c-transparent);
+  }
+}
+
+.profileHead {
+  display: flex;
+  flex-direction: column;
+  grid-area: head;
+  gap: rem-calc(16);
+
+  &--withNft {
+    display: grid;
+    grid-template-areas:
+      'nft position'
+      'nft meta'
+    ;
+    grid-template-columns: 70px 1fr;
+    gap: rem-calc(8);
+
+    @include breakpoint(small down) {
+      grid-template-areas:
+        'nft position'
+        'meta meta';
+    }
+  }
+}
+
+.nftBorder {
+  flex-shrink: 0;
+  grid-area: nft;
+
+  @include icon-styles {
+    top: -6px;
+    left: -6px;
+    width: 68px;
+    height: 68px;
+  }
+}
+
+.nft {
+  width: 56px;
+  height: 56px;
+}
+
+.profileTitleWrapper {
+  display: flex;
+  grid-area: position;
+
+  @include breakpoint(small down) {
+    display: block;
+    width: 100%;
+  }
+}
+
+.profileActionsWrapper {
+  display: flex;
+  grid-area: actions;
+  justify-content: space-between;
+
+  @include breakpoint(small down) {
+    order: 1;
+  }
+}
+
+.sendMessageButton {
+  grid-area: message;
+  width: max-content;
+
+  @include breakpoint(small down){
+    flex: 1 1 auto;
+    width: 100%;
+  }
+}
+
+.profileMetaWrapper {
+  grid-area: meta;
+  --icon-color: #{$c-citrus};
+
+  @include breakpoint(small down) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.profileInfoWrapper {
+  grid-area: info;
+  word-break: break-word;
+  @include breakpoint(small down) {
+    order: 2;
+  }
+}
+
+.profileTitle {
+  @extend %typography-inter-24-bold;
+  color: $c-semidark-chocolate;
+}
+
+.profilePublishDate {
+  @extend %typography-inter-12;
+  margin-left: rem-calc(24);
+  @include breakpoint(small down) {
+    margin: 0;
+  }
+}
+
+.profileLink {
+  @extend %hover-underline;
+  color: $c-semidark-chocolate;
+
+  &:visited {
+    color: $c-gray;
+  }
+}
+
+.popularityBlockWrapper {
+  position: relative;
+}
+
+.popularityBlock {
+  @extend %typography-inter-12-bold-caps;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: rem-calc(32);
+  height: rem-calc(32);
+  color: $c-white;
+  background-color: $c-citrus;
+  border-radius: 100%;
+}
+
+.toolTip {
+  @include breakpoint(small down) {
+    display: none;
+  }
+}
+
+.timeWrapper {
+  margin-left: rem-calc(8);
+
+  @include breakpoint(small down) {
+    margin-left: 0;
+  }
+}
+
+.positionWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.moreButton {
+  display: flex;
+  grid-area: more;
+  align-items: center;
+  margin-left: rem-calc(8);
+  color: $c-citrus;
+
+  @extend %typography-inter-12-bold-caps;
+  @extend %button-reset;
+
+  @include icon-styles {
+    margin-left: rem-calc(8);
+  }
+
+  @include breakpoint(small down) {
+    display: flex;
+    order: 3;
+  }
+}

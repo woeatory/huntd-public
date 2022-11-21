@@ -1,0 +1,35 @@
+@import "utils";
+
+.authButtonsContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.buttonSignIn {
+  @extend %typography-inter-14-caps;
+  padding: rem-calc(12) rem-calc(16);
+  #{$c-button-text}: $c-citrus;
+  @extend %hover-underline;
+
+  &::after {
+    top: auto;
+    bottom: rem-calc(10);
+    left: rem-calc(16);
+    width: calc(100% - #{rem-calc(32)});
+  }
+}
+
+.authButton {
+
+  &:not(:last-child) {
+    margin-right: rem-calc(24);
+  }
+
+  @include breakpoint(small down) {
+
+    &:not(:last-child) {
+      margin-right: rem-calc(8);
+    }
+  }
+}

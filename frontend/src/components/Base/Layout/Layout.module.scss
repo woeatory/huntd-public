@@ -1,0 +1,31 @@
+@import "utils";
+
+.page {
+  min-height: 100vh;
+  padding-top: var($header-height);
+  padding-bottom: var($header-height);
+}
+
+.pageWithBg {
+  background-color: $c-bg;
+}
+
+.pageWithoutBottomPadding {
+  @extend .page;
+  padding-bottom: 0;
+}
+
+.pageWithAlert {
+  @extend .page;
+  padding-top: var($header-with-alert-height);
+}
+
+.fullWidthPageWrapper {
+  overflow-x: hidden;
+}
+
+.emptyPage {
+  min-height: 100vh;
+  padding-top: rem-calc(40);
+  background: linear-gradient(180deg, rgba(255, 186, 170, 0.8) 0%, #C2EDFF 100%);
+}

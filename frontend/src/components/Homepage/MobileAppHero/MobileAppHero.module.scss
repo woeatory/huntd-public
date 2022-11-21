@@ -1,0 +1,67 @@
+@import 'utils';
+
+.container {
+  gap: rem-calc(140);
+  align-items: center;
+
+  @include breakpoint(medium down) {
+    gap: rem-calc(64);
+  }
+
+  @include breakpoint(small down) {
+    flex-direction: column;
+    gap: unset;
+    align-items: flex-start;
+  }
+}
+
+.title {
+  @extend %typography-inter-56-caps;
+  @include breakpoint(medium down) {
+    font-size: rem-calc(48);
+  }
+  @include breakpoint(small down) {
+    font-size: rem-calc(32);
+  }
+}
+
+.device {
+
+  @include breakpoint(medium down) {
+    width: rem-calc(200);
+    height: rem-calc(415);
+  }
+
+  @include breakpoint(small down) {
+    justify-content: flex-start;
+    width: rem-calc(178);
+    height: rem-calc(394);
+    padding: rem-calc(80 8 0);
+    margin-bottom: rem-calc(130);
+    border: 10px solid $c-semidark-chocolate;
+    border-radius: 24px;
+  }
+}
+
+.descriptionButtons {
+  flex-direction: row;
+  justify-content: normal;
+  margin-top: rem-calc(64);
+
+  @include breakpoint(medium down) {
+    flex-direction: column;
+  }
+
+  @include breakpoint(small down) {
+    display:  none;
+  }
+}
+
+.storeButton {
+
+  @include breakpoint(small down) {
+    width: 100%;
+    height: auto;
+  }
+}
+

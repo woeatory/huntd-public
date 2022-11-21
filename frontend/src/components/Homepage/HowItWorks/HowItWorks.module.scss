@@ -1,0 +1,135 @@
+@import "utils";
+
+.title {
+  text-align: center;
+}
+
+.blocks {
+  display:  flex;
+  gap: rem-calc(60);
+  align-items: stretch;
+  justify-content: center;
+
+  @include breakpoint(medium down) {
+    flex-direction: column;
+    gap: rem-calc(24);
+  }
+}
+
+.block {
+  display: flex;
+  gap: rem-calc(16);
+  align-items: flex-start;
+  padding: rem-calc(16 24);
+  overflow: hidden;
+  color: $c-white;
+  background-color: $c-citrus;
+  border-radius: rem-calc(16);
+}
+
+.wavesContainer {
+  min-width: 100vw;
+  min-height: 150px;
+  margin: 0 calc((100% - 100vw) / 2);
+  background-image: url(./waves.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+
+  @include breakpoint(medium) {
+
+    min-height: 250px;
+  }
+
+  @include breakpoint(large) {
+    min-height: 350px;
+    margin-top: -180px;
+  }
+
+  @include breakpoint(xxlarge) {
+    min-height: 450px;
+  }
+}
+
+.stepsShowcase {
+  @include breakpoint(medium down) {
+    display: none;
+  }
+}
+
+.candidatesBlock {
+  display: flex;
+  flex-direction: column;
+  gap: rem-calc(24);
+}
+
+.candidate {
+  display: flex;
+  gap: rem-calc(12);
+
+  &:first-child {
+    align-self: flex-end;
+    margin-bottom: rem-calc(8);
+  }
+}
+
+.avatar {
+  position: relative;
+  display: inline-block;
+  flex-shrink: 0;
+  width: 64px;
+  height: 64px;
+  background-image: url(./small_hexagon.svg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+
+  &__image {
+    clip-path: polygon(50% 7.5%, 87.5% 27.5%, 87.5% 72.5%, 50% 92.5%, 12.4% 72.5%, 12.5% 27.5%);
+  }
+}
+
+.descriptionItem {
+  position: relative;
+
+  &:not(:last-child) {
+    margin-right: rem-calc(8);
+
+    &::after {
+      position: absolute;
+      top: 50%;
+      right: -8px;
+      display: inline-block;
+      width: 4px;
+      height: 4px;
+      content: '';
+      background-color: $c-citrus;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+.chatBlock {
+  display: flex;
+  flex-direction: column;
+  gap: rem-calc(16);
+}
+
+.chatBubble {
+  display: inline-block;
+  width: fit-content;
+  padding: rem-calc(8 16);
+  white-space: pre-wrap;
+
+  &--left {
+    border: 1px solid $c-citrus;
+    border-radius: 20px 20px 20px 0;
+  }
+
+  &--right {
+    align-self: flex-end;
+    color: $c-white;
+    background-color: $c-citrus;
+    border-radius: 20px 20px 0;
+  }
+}

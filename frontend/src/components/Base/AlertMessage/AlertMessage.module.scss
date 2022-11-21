@@ -1,0 +1,18 @@
+@import "utils";
+
+.alertMessageWrapper {
+  position: fixed;
+  top: calc(var(#{$header-height}));
+  right: 0;
+  left: 0;
+  z-index: 9;
+  max-height: calc(100% - var(#{$header-height}));
+  border: 1px solid $c-error;
+  border-radius: 4px;
+}
+
+.withOpenedModal {
+  @include breakpoint(small down) {
+    display: none;
+  }
+}

@@ -1,0 +1,19 @@
+@import "utils";
+
+.timeAgo {
+  @extend %typography-inter-12;
+
+  &:global(#{$accent}) {
+    @extend %typography-inter-14;
+  }
+}
+
+.onlineStatus {
+  display: flex;
+  align-items: center;
+  @include with-unread-mark {
+    --unread-mark-size: #{rem-calc(8)};
+    top: calc(50% - #{rem-calc(4)});
+    right: calc(100% + #{rem-calc(8)});
+  }
+}

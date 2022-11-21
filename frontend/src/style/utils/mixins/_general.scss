@@ -1,0 +1,54 @@
+@mixin media-touch() {
+  @media (pointer: coarse) {
+    @content;
+  }
+}
+
+@mixin covers-parent {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+@mixin hover($property, $to-value, $time: $duration) {
+  transition: $property $time $easing;
+
+  &:hover {
+    #{$property}: $to-value;
+  }
+}
+
+@mixin active() {
+  &:global(#{$active}) {
+    @content;
+  }
+}
+
+@mixin webkit-smoothscroll {
+  overflow: hidden;
+  overflow-y: auto;
+
+  -webkit-overflow-scrolling: touch;
+}
+
+@mixin visually-hidden {
+  position: absolute !important;
+
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+
+  clip: rect(0 0 0 0) !important;
+}
+
+@mixin layers {
+  display: grid;
+  grid-template-areas: "layers";
+  grid-template-columns: 100%;
+
+  > * {
+    grid-area: layers;
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "recruiter_profiles",
+  "info": {
+    "name": "Recruiter Profiles"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "DRAFT",
+        "ON_REVIEW",
+        "REJECTED",
+        "ACTIVE",
+        "INACTIVE"
+      ],
+      "default": "DRAFT",
+      "required": true
+    },
+    "position": {
+      "type": "string",
+      "required": false
+    },
+    "company_name": {
+      "type": "string",
+      "required": false
+    },
+    "user_id": {
+      "via": "recruiter_profiles",
+      "model": "huntd-users"
+    },
+    "reject_reason": {
+      "type": "string"
+    },
+    "profile_connections": {
+      "via": "recruiter_profile_id",
+      "collection": "profile-connections"
+    }
+  }
+}

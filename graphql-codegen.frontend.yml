@@ -1,0 +1,23 @@
+overwrite: true
+schema:
+  - "api/src/modules/**/*.schema.ts"
+  - "frontend/src/controllers/apollo/apollo.localStore/modules/**/*.schema.ts"
+  - |
+    scalar Upload
+documents:
+  - "api/src/modules/**/*.queries.frontend/**.ts"
+  - "api/src/modules/**/*.fragments.frontend/**.ts"
+  - "frontend/src/controllers/apollo/apollo.localStore/modules/**/*.queries/**.ts"
+  - "frontend/src/controllers/apollo/apollo.localStore/modules/**/*.fragments/**.ts"
+generates:
+  frontend/src/controllers/graphql/generated.ts:
+    plugins:
+      - "typescript"
+      - "typescript-operations"
+      - "typescript-react-apollo"
+    config:
+      gqlImport: '@apollo/client#gql'
+      pureMagicComment: true
+      scalars:
+        GraphQLDateTime: string
+        Upload: any

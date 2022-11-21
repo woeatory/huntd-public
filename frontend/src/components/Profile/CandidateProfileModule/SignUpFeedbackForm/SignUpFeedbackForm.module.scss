@@ -1,0 +1,24 @@
+@import 'utils';
+
+.mainContainer {
+  @include breakpoint(large down) {
+    margin-top: rem-calc(64);
+  }
+
+  @include breakpoint(small down) {
+    margin-top: rem-calc(40);
+  }
+}
+
+.form {
+  padding: rem-calc(24);
+  background-color: $c-white;
+  border-radius: 4px;
+  box-shadow: 0 0 8px rgba(112, 144, 176, 0.08);
+}
+
+.sendButton {
+  @include breakpoint(small down) {
+    width: 100%;
+  }
+}

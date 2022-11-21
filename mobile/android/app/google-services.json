@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "309958264854",
+    "project_id": "huntd-mobile",
+    "storage_bucket": "huntd-mobile.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:309958264854:android:eba75cc55f5437b447cd37",
+        "android_client_info": {
+          "package_name": "com.mateacademy.huntd"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "309958264854-0ch8lpq2g9sameqos39j2grs7o5dr32g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mateacademy.huntd",
+            "certificate_hash": "d3a401a2ae21e44b1aca7c122777d5a52558cee0"
+          }
+        },
+        {
+          "client_id": "309958264854-b0k2dd5ov2d544ucbt5rjcd389l5uidl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDG7eQiq1C7swNKBDJDy9G1KDXdIaq5vP4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "309958264854-b0k2dd5ov2d544ucbt5rjcd389l5uidl.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "309958264854-eumteu0dnc0rstijb7slsf7afrsivsm9.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mateacademy.huntd",
+                "app_store_id": "1560379716"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

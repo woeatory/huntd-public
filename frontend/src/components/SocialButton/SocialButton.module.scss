@@ -1,0 +1,20 @@
+@import "utils";
+
+.buttonSocial {
+  @extend %button-base;
+  padding: rem-calc(8) rem-calc(28);
+  #{$c-button-text}: $c-citrus;
+  #{$c-button-border}: $c-light-gray;
+
+  &:hover {
+    #{$c-button-text}: $c-button-accent;
+    #{$c-button-background}: #ffefeb;
+  }
+  @include disabled {
+    #{$c-button-text}: $c-peach;
+
+    &:hover {
+      #{$c-button-background}: $c-white;
+    }
+  }
+}

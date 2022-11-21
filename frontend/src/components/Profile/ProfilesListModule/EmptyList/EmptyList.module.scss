@@ -1,0 +1,97 @@
+@import 'utils';
+
+.wrapper {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: rem-calc(56) auto;
+}
+
+.text {
+  @extend %typography-inter-12-caps;
+  color: $c-gray;
+}
+
+.magnifier {
+  position: absolute;
+  width: rem-calc(40);
+  height: rem-calc(40);
+  background: linear-gradient(
+    rgba(88, 161, 187, 0.1),
+    rgba(54, 97, 113, 0.3) 40%,
+    rgba(33, 76, 91, 0.3) 3%,
+    rgba(34, 83, 99, 0.5)
+  );
+  filter: blur(1px);
+  border: 2px solid $c-citrus;
+  border-radius: 50%;
+  animation-name: moving;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+
+  &::after {
+    position: absolute;
+    top: 85%;
+    right: 0;
+    width: rem-calc(2);
+    height: rem-calc(25);
+    content: "";
+    background-color: $c-citrus;
+    transform: rotate(-37deg);
+  }
+}
+
+@keyframes moving {
+
+  0% { transform: translate(-100%, 0); }
+
+  10% { transform: translateX(10%, 10%); }
+
+  20% { transform: translateX(90%, -10%); }
+
+  30% { transform: translateX(-40%, 10%); }
+
+  40% { transform: translateX(-60%, 0);}
+
+  50% { transform: translate(30%, -20%);}
+
+  60% { transform: translate(60%, 10%);}
+
+  70% { transform: translate(-10%, 10%);}
+
+  80% { transform: translate(-80%, 0);}
+
+  90% { transform: translate(-50%, 10%); }
+
+  100% { transform: translate(20%, -10%); }
+}
+
+.subscriptionsActions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.subscriptionsText {
+  @extend %typography-inter-16;
+  margin-bottom: rem-calc(24);
+  color: $c-semidark-chocolate;
+  text-align: center;
+}
+
+.savedText {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $c-citrus;
+}
+
+.notifyButton {
+  @include breakpoint(small down) {
+    width: 100%;
+  }
+}

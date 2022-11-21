@@ -1,0 +1,125 @@
+@import 'utils';
+
+$nft-width: 106px;
+$nft-height: 118px;
+$gap: 16px;
+
+.wrapper {
+  background-image: url(./spotlight.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 125% 125%;
+}
+
+.title {
+  margin-bottom: rem-calc(16);
+  text-align: center;
+  white-space: pre-wrap;
+}
+
+.nftsWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: rem-calc(24);
+}
+
+.nftsRow {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  &:nth-child(2) {
+    padding: 0 ($nft-width + $gap);
+
+    @include breakpoint(medium down) {
+      padding: 0;
+    }
+
+    @include breakpoint(small down) {
+      justify-content: space-around;
+
+      .nft:nth-child(2) {
+        display: none;
+      }
+    }
+  }
+
+  &:last-child {
+    padding: 0 (($nft-width + $gap) * 2);
+
+    @include breakpoint(medium down) {
+      padding: 0 ($nft-width + $gap);
+    }
+
+    @include breakpoint(small down) {
+      justify-content: space-evenly;
+      padding: 0;
+    }
+  }
+}
+
+.nftsGroup {
+  display: inline-flex;
+  gap: rem-calc($gap);
+
+  &--top-left {
+
+    .nft:first-child {
+      animation: 3s infinite ease alternate coin;
+    }
+  }
+
+  &--middle-right {
+
+    .nft:last-child {
+      animation: 3s infinite ease alternate coin;
+    }
+  }
+
+  @include breakpoint(medium down) {
+
+    &:first-child {
+
+      .nft:last-child {
+        display: none;
+      }
+    }
+
+    &:last-child {
+
+      .nft:first-child {
+        display: none;
+      }
+    }
+  }
+
+  @include breakpoint(small down) {
+
+    &--top-left {
+
+      .nft:first-child {
+        animation: none;
+      }
+    }
+
+    &--middle-right {
+
+      .nft:last-child {
+        animation: none;
+      }
+    }
+
+  }
+}
+
+.nft {
+  position: relative;
+  display: inline-block;
+  width: $nft-width;
+  height: $nft-height;
+  background-image: url(./hexagon.svg);
+
+  &__image {
+    clip-path: polygon(50% 5%, 92.5% 27.5%, 92.5% 72.5%, 50% 95%, 7.5% 72.5%, 7.5% 27.5%);
+  }
+}

@@ -1,0 +1,11 @@
+@import "utils";
+
+.actionWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.actionTitle {
+  padding-right: rem-calc(40);
+}
+

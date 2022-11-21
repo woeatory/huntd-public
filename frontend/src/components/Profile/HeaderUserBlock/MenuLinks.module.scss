@@ -1,0 +1,103 @@
+@import 'utils';
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: rem-calc(24 16);
+
+  @include breakpoint(medium) {
+    padding: rem-calc(24 32);
+  }
+}
+
+.avatar {
+  @include breakpoint(medium) {
+    display: none;
+  }
+}
+
+.nftIcon {
+  @include icon-styles {
+    top: -4px;
+    left: -4px;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.nftHexagon {
+  width: 32px;
+  height: 32px;
+  margin-right: 16px;
+}
+
+.profileNavLink {
+  padding: rem-calc(16 0);
+  color: $c-semidark-chocolate;
+  text-decoration: none;
+  @extend %typography-inter-12-caps;
+  @include hover(color, $c-citrus);
+
+  &:global(#{$active}) {
+    @extend %typography-inter-12-bold-caps;
+  }
+}
+
+.activeLink {
+  font-weight: $font-weight_bold;
+}
+
+.shiftedLink {
+  margin-left: rem-calc(44);
+
+  @include breakpoint(medium) {
+    margin-left: 0;
+  }
+}
+
+.mobileOnlyLink {
+  display: none;
+
+  @include breakpoint(small down) {
+    display: block;
+  }
+}
+
+.profileLink {
+  display: inline-block;
+  padding: rem-calc(12 0);
+  margin: 0;
+}
+
+.profileLinkWrapper {
+  display: flex;
+  align-items: center;
+
+
+  @include breakpoint(medium) {
+    margin-bottom: 0;
+  }
+}
+
+.logOut {
+  padding: rem-calc(16 0);
+  margin-top: auto;
+  text-align: left;
+  @extend %button-reset;
+  @extend %typography-inter-12-caps;
+  @include hover(color, $c-citrus);
+}
+
+.dividerContainer {
+  position: relative;
+  margin: rem-calc(16 0);
+
+  @include icon-styles {
+    position: absolute;
+  }
+
+  @include breakpoint (small down) {
+    display: none;
+  }
+}

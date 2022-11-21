@@ -1,0 +1,41 @@
+@import "utils";
+
+.avatarBlock {
+  display: flex;
+  gap: rem-calc(32);
+  align-items: center;
+  cursor: pointer;
+}
+
+.uploadButtonWrapper {
+  cursor: pointer;
+}
+
+.uploadButton {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  color: $c-citrus;
+  @extend %typography-inter-12-bold-caps;
+
+  @include icon-styles {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.nftPickerModal {
+  top: rem-calc(60);
+  min-width: 80%;
+  max-height: 80% !important;
+  padding: 0;
+
+  > button {
+    display: none;
+  }
+
+  @include breakpoint(small down) {
+    top: rem-calc(180);
+  }
+}
+

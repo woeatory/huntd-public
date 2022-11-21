@@ -1,0 +1,5 @@
+Huntd: tech job search
+
+Huntd app helps engineers to get desired job offers from great companies.
+Create an anonymous profile and let companies apply to you.
+Stay in touch with recruiters wherever you are.

@@ -1,0 +1,65 @@
+@import "utils";
+
+@keyframes slide {
+
+  from {
+    opacity: 0;
+    transform: translateX(20%);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  padding: rem-calc(8 24 8);
+  background-color: $c-bg;
+  border: 1px solid $c-current;
+  border-radius: 4px;
+  box-shadow: 0 4px 16px rgba(209, 204, 201, 0.6);
+  animation: slide $duration $ease-out;
+}
+
+.info {
+  color: $c-info;
+}
+
+.success {
+  color: $c-success;
+}
+
+.warning {
+  color: $c-warning;
+}
+
+.error {
+  color: $c-error;
+}
+
+.title {
+  align-self: center;
+}
+
+.alertText {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include breakpoint(medium down) {
+    flex-direction: column;
+  }
+}
+
+.text {
+  text-align: center;
+}
+
+.ctaBtn {
+  width: max-content;
+  margin-left: rem-calc(8);
+}
+

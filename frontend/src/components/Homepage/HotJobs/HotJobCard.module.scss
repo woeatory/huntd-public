@@ -1,0 +1,95 @@
+@import 'utils';
+
+.jobCard {
+  display: flex;
+  flex-direction: column;
+  min-height: 320px;
+  padding: rem-calc(24);
+  border-radius: 4px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.12);
+
+  @include breakpoint(medium down) {
+
+    &:nth-child(-n+2) {
+      margin-bottom: rem-calc(24);
+    }
+  }
+
+  @include breakpoint(small down) {
+
+    &:not(:last-child) {
+      margin-bottom: rem-calc(24);
+    }
+  }
+}
+
+.detailsButton {
+  max-width: 100%;
+  margin-top: auto;
+}
+
+.requirementsList {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.requirementItem {
+  display: flex;
+  align-items: center;
+
+  &:not(:last-child) {
+
+    &::after {
+      display: inline-block;
+      width: rem-calc(4);
+      height: rem-calc(4);
+      margin: rem-calc(0 4);
+      content: '';
+      background-color: $c-citrus;
+      border-radius: 50%;
+    }
+  }
+}
+
+.companyInfo {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  word-wrap: break-word;
+  white-space: normal;
+  @extend %text-truncate;
+}
+
+.companyNameContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.jobCompany {
+  flex-basis: 90%;
+  @extend %text-truncate;
+}
+
+.topLabel {
+  display: inline-block;
+  flex-basis: 10%;
+  margin-left: rem-calc(8);
+  color: $c-citrus;
+}
+
+.jobHeader {
+  display: flex;
+  align-items: flex-start;
+}
+
+.logo {
+  display: flex;
+  flex-shrink: 0;
+  width: rem-calc(48);
+  height: rem-calc(48);
+  padding: rem-calc(4);
+  background-color: $c-white;
+  border: 1px solid $c-citrus;
+  border-radius: 4px;
+}

@@ -1,0 +1,40 @@
+@import "utils";
+
+.wrapper {
+  position: relative;
+}
+
+.input {
+  @extend %typography-inter-16;
+  width: 100%;
+  padding: rem-calc(10) rem-calc(16);
+  color: $c-semidark-chocolate;
+  border: 1px solid $c-light-gray;
+  border-radius: 4px;
+  transition-timing-function: $easing;
+  transition-duration: $duration;
+  transition-property: color, border-color, opacity;
+  @include disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+  @include invalid {
+    border-color: $c-error;
+  }
+
+  &:hover {
+    background-color: $c-bg;
+  }
+
+  &:focus {
+
+    &::placeholder {
+      color: $c-light-gray;
+    }
+  }
+}
+
+.textarea {
+  @extend .input;
+  resize: none;
+}

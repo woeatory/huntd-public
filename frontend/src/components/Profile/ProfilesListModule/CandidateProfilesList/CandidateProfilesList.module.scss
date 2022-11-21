@@ -1,0 +1,186 @@
+@import "utils";
+
+.title {
+  margin-top: rem-calc(24);
+  @include breakpoint(large) {
+    margin-bottom: rem-calc(40);
+  }
+
+
+  @include breakpoint(xlarge down) {
+    font-size: rem-calc(48);
+  }
+
+  @include breakpoint(large down) {
+    font-size: rem-calc(40);
+  }
+
+  @include breakpoint(small down) {
+    font-size: rem-calc(32);
+  }
+}
+
+.list {
+  @include breakpoint(large) {
+
+    &:before {
+      position: absolute;
+      top: 0;
+      left: rem-calc(-24);
+      display: block;
+      width: 1px;
+      height: 100%;
+      content: '';
+      background-color: $c-light-gray;
+    }
+  }
+}
+
+.listItem {
+
+  &:not(:last-child) {
+    margin-bottom: rem-calc(16);
+
+    @include breakpoint(small down){
+
+      &:after {
+        display: block;
+        height: 1px;
+        margin: rem-calc(24) 0;
+        content: "";
+        background-color: $c-light-gray;
+      }
+    }
+  }
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.mobileFiltersWrapper {
+  margin-bottom: rem-calc(24);
+
+  @include breakpoint(medium down) {
+    position: sticky;
+    top: var($header-height);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    padding: rem-calc(24) 0;
+    margin-bottom: 0;
+    background-color: $c-white;
+  }
+
+  @include breakpoint(small down) {
+    position: relative;
+    top: 0;
+  }
+
+  @include breakpoint(large) {
+    margin-top: rem-calc(24);
+  }
+
+  .mobileButton {
+    display: none;
+    max-height: 1em;
+
+    @include breakpoint(medium down) {
+      display: flex;
+      width: 50%;
+      max-height: unset;
+      padding: rem-calc(24);
+      visibility: visible;
+      background-color: $c-white;
+      border: 1px solid $c-citrus;
+    }
+
+    @include breakpoint(small down) {
+      position: fixed;
+      right: rem-calc(16);
+      bottom: rem-calc(16);
+      width: rem-calc(48);
+      height: rem-calc(48);
+      padding: 0;
+      margin: 0;
+      background-color: transparent;
+      border: none;
+    }
+  }
+}
+
+.filtersWrapper {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  @include breakpoint(large) {
+    position: sticky;
+    top: calc(var(--header-with-alert-height));
+    max-height: calc(100vh - var(--header-with-alert-height));
+    overflow-y: auto;
+  }
+
+  &:global(#{$disabled}) {
+    overflow-y: hidden;
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.filters {
+  position: relative;
+  @include breakpoint(medium down) {
+    display: none;
+  }
+}
+
+.sidebarWrapper {
+  display: none;
+
+  @include breakpoint(medium down) {
+    display: flex;
+  }
+}
+
+.subscriptionButtonLabel {
+  @extend %typography-inter-18-bold;
+  margin-bottom: rem-calc(16);
+}
+
+.topCandidatesButton {
+  width: 100%;
+}
+
+.hintContainer {
+  display: flex;
+  align-items: center;
+  width: 50%;
+
+  @include breakpoint(large) {
+    margin-bottom: rem-calc(24);
+  }
+
+  @include breakpoint(medium down) {
+    margin-left: rem-calc(24);
+  }
+
+  @include breakpoint(small down) {
+    display: none;
+  }
+}
+
+.mobileUpperSection {
+  display: flex;
+  align-items: center;
+
+  @include breakpoint(medium down) {
+    margin-bottom: rem-calc(24);
+  }
+}
+
+.progressBarContainer {
+  width: 56px;
+  height: 56px;
+}

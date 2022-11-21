@@ -1,0 +1,35 @@
+// color variables
+$c-transparent: transparent;
+$c-current: currentColor;
+$c-void: #000;
+$c-white: #fff;
+$c-citrus: #f35a35;
+$c-peach: #ffbaaa;
+$c-light-peach: #feeeeb;
+$c-extradark-chocolate: #211e1c;
+$c-semidark-chocolate: #474a4b;
+$c-gray: #7e8284;
+$c-pampas: #f0ebe8;
+$c-light-gray: #dde2e4;
+$c-sky: #c2edff;
+$c-clouds: #e9f8ff;
+$c-bg: #fdfbfb;
+$c-yellow: #fec132;
+$c-snow-gray: #f5f9fa;
+
+$c-green: #38c976;
+$c-whisper: #e9e9e9;
+
+// status
+$c-error: #ea7784;
+$c-alert: #ffd748;
+$c-warning: $c-yellow;
+$c-success: $c-green;
+$c-info: $c-light-gray;
+
+// buttons
+$c-button-accent: #cb4a2b;
+
+$c-button-text: --c-button-text;
+$c-button-background: --c-button-background;
+$c-button-border: --c-button-border;

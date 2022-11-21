@@ -1,0 +1,33 @@
+@import "utils";
+
+.templateInfo {
+  max-height: 0;
+  visibility: hidden;
+  background-color: $c-white;
+  border: 1px solid $c-citrus;
+  border-radius: 4px;
+  opacity: 0;
+  transition:
+    transform $duration $easing,
+    opacity $duration $easing,
+    max-height 0.2s $easing;
+  transform: scaleY(0);
+}
+
+.overlay {
+  max-height: 510px;
+  padding: rem-calc(16 24);
+  visibility: visible;
+  opacity: 1;
+  transition:
+    transform $duration $easing,
+    opacity $duration $easing,
+    max-height $duration $easing;
+  transform: scaleY(1);
+  transform-origin: top;
+}
+
+.templateTextarea {
+  @extend %typography-inter-14;
+  color: $c-gray;
+}

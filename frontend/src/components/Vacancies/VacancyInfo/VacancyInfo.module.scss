@@ -1,0 +1,75 @@
+@import "utils";
+
+.item {
+
+  &:not(:last-child) {
+    margin-bottom: rem-calc(24);
+  }
+}
+
+.itemTitle {
+  @extend %typography-inter-18;
+  color: $c-semidark-chocolate;
+}
+
+.markdown {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: revert;
+    font-weight: $font-weight_bold;
+  }
+
+  strong {
+    font-weight: $font-weight_bold;
+  }
+
+  em {
+    font-style: italic;
+  }
+
+  ol,
+  ul {
+    padding: revert;
+    margin-top: rem-calc(-24);
+    list-style: revert;
+  }
+}
+
+.sourcedVacancy {
+
+  ul > li {
+    position: relative;
+    display: inline-block;
+    white-space: normal;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: rem-calc(-16px);
+      content: "•";
+    }
+  }
+
+  li > p {
+    display: inline-block;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+  }
+}
+
+.applyButton {
+  align-items: flex-start;
+}

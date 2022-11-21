@@ -1,0 +1,64 @@
+@import "utils";
+
+.chatSelectorItem {
+  display: grid;
+  grid-template-areas:
+    "name mark actions"
+    "title date actions";
+  grid-template-columns: 1fr auto #{rem-calc(32)};
+  grid-gap: rem-calc(4);
+  padding: rem-calc(12 4 12 48);
+  color: $c-current;
+  text-decoration: none;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  transition: background-color $duration $easing, border-color $duration $easing;
+
+  &:global(#{$active}) {
+    background-color: $c-light-peach;
+  }
+
+  &:hover {
+    border-color: $c-light-gray;
+  }
+}
+
+.chatTitle {
+  position: relative;
+  @extend %typography-inter-14;
+  grid-area: title;
+  color: $c-gray;
+
+  @include with-unread-mark {
+    --unread-mark-size: #{rem-calc(8)};
+    top: calc(50% - #{rem-calc(4)});
+    right: calc(100% + #{rem-calc(12)});
+  }
+}
+
+.chatName {
+  @extend %typography-inter-14-bold;
+  position: relative;
+  grid-area: name;
+  color: $c-semidark-chocolate;
+
+  @include icon-styles {
+    position: absolute;
+    top: calc(50% - #{rem-calc(8)});
+    right: calc(100% + #{rem-calc(8)});
+    width: rem-calc(16);
+    height: rem-calc(16);
+  }
+}
+
+.chatDate {
+  @extend %typography-inter-14;
+  grid-area: date;
+  justify-self: end;
+}
+
+.chatActions {
+  grid-area: actions;
+  align-self: center;
+  justify-self: end;
+}

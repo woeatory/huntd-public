@@ -1,0 +1,23 @@
+@import "utils";
+
+.switcher {
+  display: flex;
+  height: rem-calc(32);
+  padding: rem-calc(4);
+  background-color: $c-pampas;
+  border-radius: 4px;
+}
+
+.switcherButton {
+  @extend %button-reset;
+  flex-basis: 50%;
+  color: $c-gray;
+  @extend %typography-inter-12-caps;
+  border-radius: 2px;
+  transition: background-color $duration $easing;
+
+  &:global(#{$active}) {
+    color: $c-citrus;
+    background-color: $c-white;
+  }
+}

@@ -1,0 +1,20 @@
+@import 'utils';
+
+.tabsContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: rem-calc(24);
+}
+
+.tabButton {
+  flex-basis: 50%;
+  padding-bottom: rem-calc(8);
+  border-bottom: 1px solid $c-transparent;
+  transition: border $duration $easing;
+  @extend %button-reset;
+  @extend %typography-inter-14-caps;
+  &:global(#{$active}) {
+    font-weight: $font-weight_bold;
+    border-bottom: 1px solid $c-void;
+  }
+}

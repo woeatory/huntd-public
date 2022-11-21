@@ -1,0 +1,85 @@
+@import "utils";
+
+.selectContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: rem-calc(16);
+}
+
+.subscriptionSelect {
+  flex-basis: 60%;
+  flex-grow: 0;
+  @extend %typography-inter-14;
+
+  :global(.select__control) {
+    padding-left: 0;
+    border: none;
+  }
+
+  :global(.select__placeholder) {
+    color: $c-citrus;
+  }
+
+  :global(.select__value-container) {
+    padding-left: 0;
+  }
+
+  :global(.select__control:hover) {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+  }
+
+  :global(.select__control:hover)
+  :global(.select__placeholder) {
+    color: $c-citrus;
+  }
+
+  :global(.select__menu) {
+    box-shadow: 0 4px 16px rgba(114, 110, 108, 0.12);
+  }
+
+  :global(.select__option) {
+    @include hover(color, $c-citrus);
+  }
+
+  :global(.select__option--is-focused),
+  :global(.select__option--is-focused:active) {
+    font-weight: $font-weight_regular;
+  }
+
+  :global(.select__control:focus-within)
+  :global(.select__single-value) {
+    color: $c-citrus;
+  }
+
+  :global(.select__single-value) {
+    color: $c-citrus;
+  }
+
+
+  :global(.select__control:focus-within)
+  :global(.select__placeholder) {
+    color: $c-citrus;
+  }
+}
+
+.editTitle {
+  flex-basis: 30%;
+  @extend %button-reset;
+  color: $c-citrus;
+  @extend %typography-inter-12-bold-caps;
+
+  &:focus {
+    outline-color: transparent;
+  }
+}
+
+.dividerContainer {
+  position: relative;
+  margin-bottom: rem-calc(16);
+
+  @include icon-styles {
+    position: absolute;
+  }
+}

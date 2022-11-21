@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/vacancies-sources",
+      "handler": "vacancies-sources.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/vacancies-sources/count",
+      "handler": "vacancies-sources.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/vacancies-sources/:id",
+      "handler": "vacancies-sources.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/vacancies-sources",
+      "handler": "vacancies-sources.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/vacancies-sources/:id",
+      "handler": "vacancies-sources.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/vacancies-sources/:id",
+      "handler": "vacancies-sources.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

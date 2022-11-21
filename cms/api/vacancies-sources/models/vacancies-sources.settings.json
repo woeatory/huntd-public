@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "vacancies_sources",
+  "info": {
+    "name": "Vacancies Source",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "url": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "user_id": {
+      "model": "huntd-users",
+      "via": "vacancies_sources"
+    }
+  }
+}

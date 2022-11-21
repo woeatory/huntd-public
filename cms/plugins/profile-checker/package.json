@@ -1,0 +1,28 @@
+{
+  "name": "strapi-plugin-profile-checker",
+  "version": "0.0.0",
+  "description": "Users' profiles moderation",
+  "private": true,
+  "strapi": {
+    "name": "Profile checker",
+    "icon": "id-card",
+    "description": "Users' profiles moderation"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.2.0",
+    "@buffetjs/core": "^3.2.3",
+    "@buffetjs/custom": "^3.2.3",
+    "@buffetjs/styles": "^3.2.3",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-router-dom": "^5.2.0",
+    "strapi-helper-plugin": "^3.1.4"
+  },
+  "engines": {
+    "node": ">=10.0.0",
+    "npm": ">=6.0.0"
+  },
+  "devDependencies": {
+    "@types/prop-types": "^15.7.3"
+  }
+}

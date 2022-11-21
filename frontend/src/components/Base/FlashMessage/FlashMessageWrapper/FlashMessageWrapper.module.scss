@@ -1,0 +1,16 @@
+@import "utils";
+
+.flashMessageWrapper {
+  @include webkit-smoothscroll;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  z-index: 9;
+  width: 448px;
+  max-width: 100%;
+  max-height: calc(100% - var(#{$header-height}));
+  padding: 0 rem-calc(12) 0 rem-calc(24);
+  @include breakpoint(small down) {
+    padding: 0 rem-calc(8) 0 rem-calc(8);
+  }
+}

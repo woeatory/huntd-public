@@ -1,0 +1,81 @@
+@import "utils";
+
+.buddyInfoWrapper {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  padding: rem-calc(24 32);
+  background-color: $c-white;
+  border-bottom: 1px solid $c-light-gray;
+  @include breakpoint(medium down) {
+    padding: rem-calc(8 16);
+  }
+}
+
+.buddyProfileLink {
+  @extend %hover-underline;
+  color: $c-current;
+  transition: color $duration $easing;
+}
+
+.chatBackLink {
+  margin-right: rem-calc(16);
+  color: $c-current;
+  transition: opacity $duration $easing;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.chatBuddyInfo {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  text-decoration: none;
+
+  &:hover {
+
+    .buddyProfileLink {
+      color: $c-citrus;
+
+      &::after {
+        transform: scaleX(1);
+        transform-origin: left center;
+      }
+    }
+  }
+}
+
+.nftIcon {
+  @include icon-styles {
+    top: -6px;
+    left: -6px;
+    width: 68px;
+    height: 68px;
+  }
+}
+
+.nftHexagon {
+  width: 56px;
+  height: 56px;
+  margin-right: 16px;
+}
+
+.buddyAvatar {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: rem-calc(56);
+  height: rem-calc(56);
+  margin-right: rem-calc(8);
+  overflow: hidden;
+  color: $c-gray;
+  border: 1px solid $c-citrus;
+  border-radius: 50%;
+
+  &:global(#{$active}) {
+    background-color: $c-light-peach;
+  }
+}

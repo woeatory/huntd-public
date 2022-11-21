@@ -1,0 +1,17 @@
+{
+  "compact": false,
+  "retainLines": true,
+  "minified": false,
+  "sourceMaps": false,
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "root": ["./dist"],
+        "alias": {
+          "@": "./dist"
+        }
+      }
+    ]
+  ]
+}

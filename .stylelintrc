@@ -1,0 +1,26 @@
+{
+  "extends": [
+    "@mate-academy/stylelint-config",
+    "stylelint-config-recess-order",
+    "stylelint-config-prettier"
+  ],
+  "plugins": [
+    "stylelint-scss",
+    "stylelint-declaration-use-variable",
+    "stylelint-order"
+  ],
+  "rules": {
+    "no-descending-specificity": null,
+    "sh-waqar/declaration-use-variable": [
+      [
+        "/color/",
+        "font-weight",
+        "font-family",
+        {"ignoreValues":  ["/transparent/", "currentColor", "inherit", "/lighten/", "/darken/"]}
+      ]
+    ],
+    "selector-pseudo-class-no-unknown": [true, {"ignorePseudoClasses": ["global", "local"]}],
+    "rule-empty-line-before": ["always"]
+
+  }
+}

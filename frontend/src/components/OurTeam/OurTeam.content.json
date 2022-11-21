@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1, "firstName": "Roman", "lastName": "Apostol", "fullName": "Roman Apostol", "jobTitle": "CEO, ex-Googler", "photo": "/team/Roman.jpeg"
+  },
+  {
+    "id": 2, "firstName": "Dmytro", "lastName": "Panchuk", "fullName": "Dmytro Panchuk", "jobTitle": "Product Manager", "photo": "/team/Dima.png"
+  },
+  {
+    "id": 3, "firstName": "Anush", "lastName": "Tonakanian", "fullName": "Anush Tonakanian", "jobTitle": "Product Designer", "photo": "/team/Anush.jpeg"
+  },
+  {
+    "id": 4, "firstName": "Alisa", "lastName": "Ivashkevych", "fullName": "Alisa Ivashkevych", "jobTitle": "Software Engineer", "photo": "/team/Alisa.jpeg"
+  },
+  {
+    "id": 5, "firstName": "Vitalii", "lastName": "Arseniuk", "fullName": "Vitalii Arseniuk", "jobTitle": "Software Engineer", "photo": "/team/Vitalii.jpeg"
+  },
+  {
+    "id": 6, "firstName": "Oleksii", "lastName": "Blezniuk", "fullName": "Oleksii Blezniuk", "jobTitle": "Software Engineer", "photo": "/team/Oleksii.jpg"
+  }
+]

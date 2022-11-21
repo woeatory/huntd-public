@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "service_access_tokens",
+  "info": {
+    "name": "Service access tokens"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "token": {
+      "type": "string",
+      "required": true
+    },
+    "user_id": {
+      "model": "huntd-users"
+    }
+  }
+}

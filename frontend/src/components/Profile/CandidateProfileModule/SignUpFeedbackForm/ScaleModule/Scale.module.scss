@@ -1,0 +1,36 @@
+@import 'utils';
+
+.container {
+  padding-top: rem-calc(40);
+}
+
+.slider {
+
+  :global(.rc-slider-mark) {
+    top: -32px;
+  }
+
+  :global(.rc-slider-mark-text) {
+    @extend %typography-inter-14;
+    color: $c-semidark-chocolate;
+  }
+
+  :global(.rc-slider-mark-text-active) {
+    font-weight: $font-weight_regular;
+  }
+
+  :global(.rc-slider-dot) {
+    display: none;
+  }
+}
+
+.labelsBlock {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 40px;
+  padding: rem-calc(8);
+  background-color: $c-light-peach;
+  border-radius: 4px;
+}

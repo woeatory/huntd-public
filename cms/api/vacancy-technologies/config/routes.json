@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/vacancy-technologies",
+      "handler": "vacancy-technologies.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/vacancy-technologies/count",
+      "handler": "vacancy-technologies.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/vacancy-technologies/:id",
+      "handler": "vacancy-technologies.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/vacancy-technologies",
+      "handler": "vacancy-technologies.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/vacancy-technologies/:id",
+      "handler": "vacancy-technologies.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/vacancy-technologies/:id",
+      "handler": "vacancy-technologies.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

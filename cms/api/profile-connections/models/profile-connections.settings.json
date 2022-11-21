@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "profile_connections",
+  "info": {
+    "name": "Profile Connections",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "paid_at": {
+      "type": "datetime"
+    },
+    "candidate_profile_id": {
+      "via": "profile_connections",
+      "model": "candidate-profiles"
+    },
+    "recruiter_profile_id": {
+      "model": "recruiter-profiles",
+      "via": "profile_connections"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "APPROVED",
+        "REJECTED",
+        "PENDING"
+      ]
+    },
+    "is_payment_requested": {
+      "type": "boolean"
+    },
+    "recruiter_user_id": {
+      "model": "huntd-users"
+    }
+  }
+}

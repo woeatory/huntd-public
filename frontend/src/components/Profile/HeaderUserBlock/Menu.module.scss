@@ -1,0 +1,55 @@
+@import 'utils';
+
+.burgerButton {
+  @extend %button-reset;
+  padding: rem-calc(16 0);
+
+  @include breakpoint(medium) {
+    display: none;
+  }
+
+  .line {
+    display: block;
+    width: 32px;
+    height: 2px;
+    background-color: $c-semidark-chocolate;
+    transition: transform $duration $easing;
+
+    &:first-child {
+      margin-bottom: rem-calc(8);
+    }
+  }
+
+  &:global(#{$active}) {
+
+    .line {
+
+      &:first-child {
+        transform: translateY(4px) rotate(-45deg);
+      }
+
+      &:last-child {
+        transform: translateY(-6px) rotate(45deg);
+      }
+    }
+  }
+}
+
+.menu {
+  position: fixed;
+  top: var($header-height);
+  height: calc(100vh - var(#{$header-height}));
+  transform: translate(0, 100px);
+
+  &:global(#{$active}) {
+    transform: translate(0);
+  }
+
+  @include breakpoint(medium) {
+    display: none;
+  }
+}
+
+.sidebar {
+  transform: translate(0);
+}

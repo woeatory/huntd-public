@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/device-tokens",
+      "handler": "device-tokens.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/device-tokens/count",
+      "handler": "device-tokens.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/device-tokens/:id",
+      "handler": "device-tokens.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/device-tokens",
+      "handler": "device-tokens.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/device-tokens/:id",
+      "handler": "device-tokens.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/device-tokens/:id",
+      "handler": "device-tokens.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

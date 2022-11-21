@@ -1,0 +1,148 @@
+%typography-inter-80-caps {
+  font-family: $f-primary;
+  font-size: rem-calc(80);
+  font-weight: $font-weight_regular;
+  line-height: 0.97em;
+  color: $c-extradark-chocolate;
+  text-transform: uppercase;
+}
+
+%typography-inter-56-caps {
+  font-family: $f-primary;
+  font-size: rem-calc(56);
+  font-weight: $font-weight_regular;
+  line-height: 0.97em;
+  color: $c-extradark-chocolate;
+  text-transform: uppercase;
+  @include breakpoint(small down) {
+    font-size: rem-calc(32);
+  }
+}
+
+%typography-inter-48 {
+  font-family: $f-primary;
+  font-size: rem-calc(48);
+  font-weight: $font-weight_regular;
+  line-height: 0.97em;
+  color: $c-extradark-chocolate;
+}
+
+%typography-inter-48-bold {
+  @extend %typography-inter-48;
+  font-weight: $font-weight_bold;
+  color: $c-extradark-chocolate;
+}
+
+%typography-inter-32 {
+  font-family: $f-primary;
+  font-size: rem-calc(32);
+  font-weight: $font-weight_regular;
+  line-height: 1.2em;
+  color: $c-extradark-chocolate;
+}
+
+%typography-inter-32-bold {
+  @extend %typography-inter-32;
+  font-weight: $font-weight_bold;
+  color: $c-extradark-chocolate;
+}
+
+%typography-inter-32-bold-caps {
+  @extend %typography-inter-32;
+  font-weight: $font-weight_bold;
+  color: $c-extradark-chocolate;
+  text-transform: uppercase;
+}
+
+%typography-inter-24 {
+  font-family: $f-primary;
+  font-size: rem-calc(24);
+  font-weight: $font-weight_regular;
+  line-height: 1.42em;
+}
+
+%typography-inter-24-bold {
+  @extend %typography-inter-24;
+  font-weight: $font-weight_bold;
+}
+
+%typography-inter-18 {
+  font-family: $f-primary;
+  font-size: rem-calc(18);
+  font-weight: $font-weight_regular;
+  line-height: 1.44em;
+}
+
+%typography-inter-18-bold {
+  @extend %typography-inter-18;
+  font-weight: $font-weight_bold;
+}
+
+%typography-inter-16 {
+  font-family: $f-primary;
+  font-size: rem-calc(16);
+  font-weight: $font-weight_regular;
+  line-height: 1.5em;
+}
+
+%typography-inter-16-bold {
+  @extend %typography-inter-16;
+  font-weight: $font-weight_bold;
+}
+
+%typography-inter-16-bold-caps {
+  @extend %typography-inter-16-bold;
+  text-transform: uppercase;
+}
+
+%typography-inter-14 {
+  font-family: $f-primary;
+  font-size: rem-calc(14);
+  font-weight: $font-weight_regular;
+  line-height: 1.43em;
+}
+
+%typography-inter-13 {
+  font-family: $f-primary;
+  font-size: rem-calc(13);
+  font-weight: $font-weight_regular;
+  line-height: 1.43em;
+}
+
+%typography-inter-14-bold {
+  @extend %typography-inter-14;
+  font-weight: $font-weight_bold;
+}
+
+%typography-inter-14-caps {
+  @extend %typography-inter-14;
+  text-transform: uppercase;
+}
+
+%typography-inter-14-bold-caps {
+  @extend %typography-inter-14-bold;
+  text-transform: uppercase;
+}
+
+%typography-inter-12 {
+  font-family: $f-primary;
+  font-size: rem-calc(12);
+  line-height: 1.33em;
+}
+
+%typography-inter-12-caps {
+  @extend %typography-inter-12;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+%typography-inter-12-bold-caps {
+  @extend %typography-inter-12-caps;
+  font-weight: $font-weight_bold;
+}
+
+%typography-inter-10 {
+  font-family: $f-primary;
+  font-size: rem-calc(10);
+  line-height: 1.33em;
+}

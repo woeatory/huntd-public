@@ -1,0 +1,8 @@
+@import "utils";
+
+.titleWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  margin-bottom: rem-calc(16);
+}

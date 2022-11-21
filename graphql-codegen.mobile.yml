@@ -1,0 +1,17 @@
+overwrite: true
+schema:
+  - "api/src/modules/**/*.schema.ts"
+  - |
+      scalar Upload
+documents:
+  - "api/src/modules/**/*.queries.mobile/**.ts"
+  - "api/src/modules/**/*.fragments.mobile/**.ts"
+generates:
+  mobile/src/controllers/graphql/generated.ts:
+    plugins:
+      - "typescript"
+      - "typescript-operations"
+      - "typescript-react-apollo"
+    config:
+      gqlImport: '@apollo/client#gql'
+      pureMagicComment: true

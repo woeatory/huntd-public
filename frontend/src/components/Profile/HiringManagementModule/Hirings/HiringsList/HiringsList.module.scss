@@ -1,0 +1,32 @@
+@import 'utils';
+
+.paidConnection {
+  @include icon-styles {
+    color: $c-success;
+  }
+}
+
+.processConnection {
+  @include icon-styles {
+    color: $c-alert;
+  }
+}
+
+.payButton {
+  @include breakpoint(small down) {
+    width: 100%;
+  }
+}
+
+.historyCell {
+  display: flex;
+  flex-basis: 100%;
+  gap: 4px;
+  align-items: center;
+  justify-content: flex-end;
+
+  @include breakpoint(small down) {
+    justify-content: center;
+  }
+}
+

@@ -1,0 +1,58 @@
+@import "utils";
+
+.item {
+
+  &:not(:last-of-type) {
+    margin-bottom: rem-calc(16);
+  }
+}
+
+.tagsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.tag {
+  display: flex;
+  align-items: center;
+  padding: rem-calc(4 8);
+  margin-right: rem-calc(8);
+  margin-bottom: rem-calc(8);
+  color: $c-semidark-chocolate;
+  background-color: $c-light-peach;
+  border-radius: rem-calc(4);
+}
+
+.secondaryTag {
+  background-color: $c-clouds;
+}
+
+.locationTag {
+  text-transform: capitalize;
+}
+
+.itemTitle {
+  @extend %typography-inter-16-bold;
+  color: $c-semidark-chocolate;
+}
+
+.additionalInfo {
+  display: none;
+
+  &:global(#{$active}) {
+    display: block;
+    padding-top: rem-calc(8);
+  }
+}
+
+.hintContainer {
+  display: flex;
+  align-items: center;
+}
+
+.divider {
+  height: 1px;
+  margin: rem-calc(16 0);
+  background-color: $c-light-gray;
+}

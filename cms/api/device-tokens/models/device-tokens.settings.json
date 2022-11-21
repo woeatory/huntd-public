@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "device_tokens",
+  "info": {
+    "name": "device_tokens"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "token": {
+      "type": "string"
+    },
+    "device_name": {
+      "type": "string"
+    },
+    "device_platform": {
+      "type": "enumeration",
+      "enum": [
+        "IOS",
+        "ANDROID"
+      ]
+    },
+    "system_version": {
+      "type": "string"
+    },
+    "device_year": {
+      "type": "string"
+    },
+    "user_id": {
+      "model": "huntd-users"
+    }
+  }
+}

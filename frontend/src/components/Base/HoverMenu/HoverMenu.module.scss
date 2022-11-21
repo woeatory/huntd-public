@@ -1,0 +1,77 @@
+@import 'utils';
+
+@mixin withContainerHover {
+
+  .actionsContainer:hover & {
+    @content;
+  }
+}
+
+.actionsContainer {
+  position: relative;
+}
+
+.hoverMenuActionsContainer {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  width: 100%;
+  min-width: max-content;
+  visibility: hidden;
+  background-color: $c-white;
+  border-radius: 4px;
+  box-shadow: 0 4px 16px 0 transparentize($c-light-gray, 0.5);
+  opacity: 0;
+  transition: opacity $duration $easing, visibility 0s $duration,
+  transform $duration $easing;
+  transform: translateY(10px);
+
+  @include withContainerHover {
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0s;
+    transform: none;
+  }
+}
+
+.actionsListItem {
+  opacity: 0;
+  transition: transform $duration $easing, opacity $duration $easing;
+  transform: translateY(-10px);
+
+  @include withContainerHover {
+    @for $i from 1 through 5 {
+      &:nth-child(#{$i}) {
+        transition-delay: #{$i/10}s;
+      }
+    }
+
+    opacity: 1;
+    transform: none;
+  }
+
+  &:not(:last-child) {
+    border-bottom: 1px solid $c-light-peach;
+  }
+}
+
+.actionItem {
+  @extend %typography-inter-14;
+  @extend %button-reset;
+  display: flex;
+  width: max-content;
+  padding: rem-calc(8 16);
+  color: $c-semidark-chocolate;
+  text-align: left;
+  text-transform: none;
+  letter-spacing: 0;
+  transition: color $duration $easing;
+
+  span {
+    transition: transform $duration $easing;
+  }
+
+  &:hover {
+    color: $c-citrus;
+  }
+}

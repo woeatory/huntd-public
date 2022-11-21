@@ -1,0 +1,7 @@
+@import "utils";
+
+.emptyTemplatesText {
+  @extend %typography-inter-14;
+  color: $c-gray;
+}
+

@@ -1,0 +1,10 @@
+version: "3.3"
+
+services:
+  api:
+    entrypoint: >
+      bash -c "npm run migrate && /bin/bash"
+    stdin_open: true
+    tty: true
+    environment:
+      - API_HOST_PUBLIC=localhost

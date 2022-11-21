@@ -1,0 +1,17 @@
+{
+  "extends": "@mate-academy/ts-config",
+  "compilerOptions": {
+    "jsx": "react-native",
+    "lib": ["dom", "esnext"],
+    "noEmit": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+    }
+  },
+  "exclude": [
+    "node_modules",
+  ],
+}

@@ -1,0 +1,30 @@
+@import "utils";
+
+.hintContainer {
+  padding: rem-calc(16);
+  background-color: $c-light-peach;
+  border-radius: 4px;
+}
+
+.examplesContainer {
+  display: flex;
+}
+
+.goodExampleLink{
+  @extend %typography-inter-14;
+  display: flex;
+  align-items: center;
+  width: max-content;
+  color: $c-citrus;
+  text-decoration: none;
+
+  @include icon-styles {
+    transition: transform $duration $easing;
+  }
+
+  &:hover {
+    @include icon-styles {
+      transform: translateX(5px) rotate(30deg);
+    }
+  }
+}

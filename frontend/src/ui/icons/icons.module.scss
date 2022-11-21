@@ -1,0 +1,10 @@
+@import "utils";
+
+$icon-size: --icon-size;
+
+$default_size: rem-calc(24);
+
+.icon {
+  width: var($icon-size, $default_size);
+  height: var($icon-size, $default_size);
+}

@@ -1,0 +1,122 @@
+@import "utils";
+
+.workPlaceContainer {
+  position: relative;
+  padding: rem-calc(24);
+  background-color: $c-white;
+  border: 1px solid $c-transparent;
+  border-radius: rem-calc(4);
+  box-shadow: 0 0 8px rgba(112, 144, 176, 0.08);
+
+  @include hover(border, 1px solid $c-citrus);
+
+  @include breakpoint(small down) {
+    padding: rem-calc(42 8);
+  }
+}
+
+.dateContainer,
+.buttonsContainer {
+  display: flex;
+  gap: rem-calc(24);
+  align-items: flex-end;
+}
+
+.formInput,
+.buttonsContainer {
+  width: 50%;
+  @include breakpoint(medium down) {
+    width: 100%;
+  }
+}
+
+.dateInput,
+.actionButton {
+  flex: 0 1 50%;
+}
+
+.closeButton {
+  position: absolute;
+  top: rem-calc(24);
+  right: rem-calc(24);
+  z-index: 2;
+ }
+
+.deleteButton,
+.closeButton {
+  @extend %button-reset;
+
+
+  @include icon-styles {
+    color: $c-gray;
+
+    @include hover(color, $c-citrus);
+  }
+
+  @include breakpoint(small down) {
+    top: rem-calc(8);
+    right: rem-calc(8);
+  }
+}
+
+.headingContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.addButton {
+  @extend %button-reset;
+  display: flex;
+  align-items: center;
+  color: $c-citrus;
+
+  @include icon-styles {
+    color: $c-citrus;
+  }
+}
+
+.reloadButton {
+  display: flex;
+  gap: 4px;
+
+  @include icon-styles {
+    color: $c-citrus;
+  }
+}
+
+.termsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.term {
+  white-space: nowrap;
+}
+
+.dot {
+  width: 4px;
+  height: 4px;
+  margin: rem-calc(0 10);
+  color: var(--icon-color, currentColor);
+  background-color: $c-citrus;
+  border-radius: 50%;
+}
+
+.iconContainer {
+  margin-left: rem-calc(8);
+
+  @include icon-styles {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.descriptionInput {
+  white-space: pre-wrap;
+}
+
+.fetchButton {
+  padding: rem-calc(8 48);
+}

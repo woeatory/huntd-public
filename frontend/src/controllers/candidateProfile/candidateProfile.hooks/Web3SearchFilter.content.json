@@ -1,0 +1,50 @@
+{
+  "web3": {
+    "technologiesIds": ["264"],
+    "role": null
+  },
+  "web3-defi": {
+    "technologiesIds": ["264"],
+    "role": null
+  },
+  "web3-nft": {
+    "technologiesIds": ["264"],
+    "role": null
+  },
+  "web3-frontend": {
+    "technologiesIds": ["264"],
+    "role": "frontend"
+  },
+  "web3-backend": {
+    "technologiesIds": ["264"],
+    "role": "backend"
+  },
+  "web3-full-stack": {
+    "technologiesIds": ["264"],
+    "role": "full_stack"
+  },
+  "web3-mobile": {
+    "technologiesIds": ["264"],
+    "role": "mobile"
+  },
+  "blockchain": {
+    "technologiesIds": ["742"],
+    "role": null
+  },
+  "solidity": {
+    "technologiesIds": ["262"],
+    "role": null
+  },
+  "web3-smart-contract": {
+    "technologiesIds": ["262"],
+    "role": null
+  },
+  "solana": {
+    "technologiesIds": ["1797"],
+    "role": null
+  },
+  "web3-react": {
+    "technologiesIds": ["264", "830"],
+    "role": null
+  }
+}

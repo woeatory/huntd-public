@@ -1,0 +1,14 @@
+@import "utils";
+
+.heading {
+  text-align: center;
+
+  @include breakpoint(large down) {
+    font-size: rem-calc(32);
+  }
+
+  @include breakpoint(medium down) {
+    font-size: rem-calc(24);
+    text-align: left;
+  }
+}

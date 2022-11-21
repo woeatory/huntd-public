@@ -1,0 +1,15 @@
+@import "utils";
+
+.floatingContainer {
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  gap: rem-calc(24);
+  align-items: center;
+  padding: rem-calc(16 0);
+  background: rgba(255, 255, 255, 0.75);
+}
+
+.discardButton {
+  background-color: $c-white;
+}

@@ -1,0 +1,40 @@
+version: "3.3"
+
+services:
+  db:
+    image: postgres:buster
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: '772184'
+      POSTGRES_DB: huntd_test
+      POSTGRES_USER: dev
+      POSTGRES_PORT: 5432
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  ################################ API ################################
+  # sequelize + graphql wrapper over postgres database
+  api:
+    build:
+      context: ./api
+      args:
+        - APP_ENV=${APP_ENV}
+        - NPM_TOKEN=${NPM_TOKEN}
+    image: huntd/huntd-api-test:${TAG}
+    command: >
+      bash -c "npm run migrate
+      && npm run test"
+    ports:
+      - "4001:4001"
+      - "9230:9229"
+    depends_on:
+      - db
+    env_file:
+      - .test.env
+    volumes:
+      - ./api:/usr/src/api
+      - /usr/src/api/dist
+      - /usr/src/api/node_modules
+volumes:
+  pgdata:

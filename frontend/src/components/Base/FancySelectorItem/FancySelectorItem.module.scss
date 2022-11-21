@@ -1,0 +1,52 @@
+@import "utils";
+
+$overhead-color: --item-overhead-color;
+$content-color: --item-content-color;
+$icon-border-color: --item-icon-border-color;
+$icon-bg-color: --item-icon-bg-color;
+
+.selectorItem {
+  @extend %hover-background;
+  display: flex;
+  align-items: center;
+  padding: rem-calc(28) rem-calc(24);
+  text-decoration: none;
+  border: 1px solid $c-citrus;
+  #{$overhead-color}: $c-light-gray;
+  #{$content-color}: $c-semidark-chocolate;
+  #{$icon-border-color}: $c-citrus;
+  #{$icon-bg-color}: $c-transparent;
+
+
+  &:hover {
+    #{$overhead-color}: $c-semidark-chocolate;
+    #{$content-color}: $c-white;
+    #{$icon-border-color}: $c-white;
+    #{$icon-bg-color}: $c-white;
+  }
+
+  @include icon-styles {
+    width: rem-calc(44);
+    height: rem-calc(44);
+  }
+}
+
+.iconContainer {
+  padding: rem-calc(12);
+  margin-right: rem-calc(16);
+  background-color: var($icon-bg-color);
+  border: 1px solid var($icon-border-color);
+  border-radius: 4px;
+}
+
+.selectorOverhead {
+  @extend %typography-inter-12-bold-caps;
+  color: var($overhead-color);
+  transition: color $duration $easing;
+}
+
+.selectorContent {
+  @extend %typography-inter-24-bold;
+  color: var($content-color);
+  transition: color $duration $easing;
+}

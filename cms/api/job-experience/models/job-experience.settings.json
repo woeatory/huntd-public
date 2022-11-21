@@ -1,0 +1,17 @@
+{
+  "kind": "collectionType",
+  "collectionName": "job_experiences",
+  "info": {
+    "name": "Job Experience"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "slug": {
+      "type": "string"
+    }
+  }
+}

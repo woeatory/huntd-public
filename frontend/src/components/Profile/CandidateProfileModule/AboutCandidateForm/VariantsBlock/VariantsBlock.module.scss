@@ -1,0 +1,35 @@
+@import "utils";
+
+.exampleButton {
+  @extend %button-reset;
+  @extend %typography-inter-12-bold-caps;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: rem-calc(4 8 4);
+  color: $c-citrus;
+  text-align: start;
+  cursor: pointer;
+  border: 1px solid $c-transparent;
+
+  @include icon-styles {
+    flex-shrink: 0;
+    width: rem-calc(16);
+    height: rem-calc(16);
+    margin-left: rem-calc(8);
+  }
+}
+
+.examplesContainer {
+  position: relative;
+  display: none;
+  width: 100%;
+  height: max-content;
+  padding: rem-calc(8);
+  margin-bottom: rem-calc(8);
+  overflow: hidden;
+}
+
+.overlay {
+  display: block;
+}

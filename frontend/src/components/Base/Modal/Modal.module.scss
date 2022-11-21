@@ -1,0 +1,70 @@
+@import 'utils';
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, rgba(255, 186, 170, 0.8) 0%, #C2EDFF 100%);
+  opacity: 0;
+  transition: opacity $duration $easing;
+
+  &_afterOpen {
+    z-index: 2;
+    opacity: 1;
+  }
+
+  &_beforeClose {
+    opacity: 0;
+  }
+}
+
+.modalContent {
+  @include webkit-smoothscroll;
+  position: relative;
+  width: 600px;
+  max-width: calc(100% - 80px);
+  max-height: calc(100% - 80px);
+  padding: rem-calc(32);
+  background-color: $c-white;
+  border-radius: 4px;
+  transition: transform $duration $easing;
+  transform: translateY(50px);
+
+  &:focus {
+    outline: none;
+  }
+
+  &_afterOpen {
+    transform: none;
+  }
+
+  &_beforeClose {
+    transform: translateY(50px);
+  }
+
+  @include breakpoint(small down) {
+    position: absolute;
+    top: var(#{$header-height});
+    min-width: 100vw;
+    min-height: calc(100% - var(#{$header-height}));
+    padding: rem-calc(16);
+  }
+}
+
+.closeModalButton {
+  @extend %button-reset;
+  position: absolute;
+  top: rem-calc(32);
+  right: rem-calc(32);
+  z-index: 3;
+
+  @include breakpoint(small down) {
+    top: rem-calc(20);
+    right: rem-calc(16);
+  }
+}

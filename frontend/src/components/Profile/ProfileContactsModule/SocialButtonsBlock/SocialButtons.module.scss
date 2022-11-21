@@ -1,0 +1,19 @@
+@import "utils";
+
+.wrapper {
+
+  .socialButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: rem-calc(12);
+    padding-bottom: rem-calc(12);
+
+    &:not(:last-child) {
+      margin-bottom: rem-calc(24);
+    }
+  }
+  @include icon-styles {
+    margin-right: rem-calc(8);
+  }
+}

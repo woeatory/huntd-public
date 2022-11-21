@@ -1,0 +1,27 @@
+@import "utils";
+
+.profileStatus {
+  @extend %typography-inter-12-bold-caps;
+  display: flex;
+  align-items: center;
+  align-self: center;
+  justify-content: center;
+  color: $c-gray;
+
+  @include icon-styles {
+    margin: 0 rem-calc(16);
+    color: $c-semidark-chocolate;
+  }
+}
+
+.profileStatusName {
+  white-space: nowrap;
+}
+
+.activeStatus {
+  color: $c-citrus;
+
+  @include icon-styles {
+    color: $c-citrus;
+  }
+}

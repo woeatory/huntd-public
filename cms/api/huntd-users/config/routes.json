@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/huntd-users",
+      "handler": "huntd-users.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/huntd-users/count",
+      "handler": "huntd-users.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/huntd-users/:id",
+      "handler": "huntd-users.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/huntd-users",
+      "handler": "huntd-users.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/huntd-users/:id",
+      "handler": "huntd-users.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/huntd-users/:id",
+      "handler": "huntd-users.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

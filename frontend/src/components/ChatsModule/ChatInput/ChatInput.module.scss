@@ -1,0 +1,65 @@
+@import "utils";
+//
+
+.chatInputWrapper {
+  padding: rem-calc(0 24 16);
+  background-color: $c-white;
+}
+
+.chatInputForm {
+  position: relative;
+}
+
+.chatInput {
+  padding-right: rem-calc(48);
+  border-radius: 4px;
+
+  &::placeholder {
+    @extend %typography-inter-14;
+    color: $c-gray;
+  }
+}
+
+.chatInputButton {
+  @extend %button-reset;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: rem-calc(56);
+  height: 100%;
+
+  @include disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+}
+
+.chatIconActive {
+  @include icon-styles {
+    color: $c-citrus;
+  }
+}
+
+.editChatIcon {
+  color: $c-semidark-chocolate;
+}
+
+
+.buttonsOutterContainer {
+  display: flex;
+  margin-bottom: rem-calc(8);
+}
+
+.buttonsOutterContainerScroll {
+  @include breakpoint(small down) {
+    overflow-x: auto;
+  }
+}
+
+.buttonsInnerContainer {
+  display: flex;
+  width: 480px;
+}

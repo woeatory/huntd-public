@@ -1,0 +1,23 @@
+@import "utils";
+
+.textContainer {
+  display: flex;
+  gap: 8px;
+}
+
+.iconCircleWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background-color: transparentize($c-error, 0.8);
+  border-radius: 50%;
+
+  @include icon-styles {
+    width: 14px;
+    height: 14px;
+    color: $c-error;
+  }
+}
+

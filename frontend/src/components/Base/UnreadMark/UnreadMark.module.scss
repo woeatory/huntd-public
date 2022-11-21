@@ -1,0 +1,15 @@
+@import "utils";
+
+.unreadMark {
+  position: absolute;
+  width: var(--unread-mark-size, #{rem-calc(6)});
+  height: var(--unread-mark-size, #{rem-calc(6)});
+  background-color: $c-citrus;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity $duration $easing;
+
+  &:global(#{$active}) {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,113 @@
+@import 'utils';
+
+.title {
+  margin-bottom: rem-calc(80);
+  text-align: center;
+  white-space: pre-wrap;
+
+  @include breakpoint(medium down) {
+    margin-bottom: rem-calc(40);
+    font-size: rem-calc(32);
+  }
+
+  @include breakpoint(small down) {
+    margin-bottom: rem-calc(24);
+    font-size: rem-calc(24);
+  }
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: rem-calc(32);
+  align-items: flex-start;
+  justify-content: space-between;
+
+  &_item {
+    display: flex;
+    gap: rem-calc(24);
+  }
+
+  @include icon-styles {
+    width: 32px;
+    height: 32px;
+    color: $c-citrus;
+  }
+
+  @include breakpoint(small down) {
+    margin-bottom: rem-calc(24);
+  }
+}
+
+.discoverButton {
+  @include breakpoint(small down) {
+    width: 100%;
+  }
+}
+
+.iconContainer {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(180deg, rgba(255, 186, 170, 0.8) 0%, $c-sky 100%);
+  border-radius: 50%;
+}
+
+.sublist {
+  display: flex;
+  flex-direction: column;
+  gap: rem-calc(8);
+}
+
+.sublist__term {
+  @extend %typography-inter-18-bold;
+}
+
+.iconBlock {
+  position: relative;
+
+  @include icon-styles {
+    color: $c-citrus;
+  }
+
+  :global(.icon-waves) {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.transitionContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 100%;
+  color: $c-citrus;
+  background: linear-gradient(
+    90.41deg,
+    #FFF 0.34%,
+    rgba(255, 255, 255, 0) 16.69%,
+    rgba(255, 255, 255, 0) 86.99%,
+    #FFF 100.35%
+  );
+
+  @include icon-styles {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    width: 48px;
+    height: 202px;
+    transform: translate(-50%, -50%) rotate(-90deg);
+
+    @include breakpoint(small down) {
+      top: 80%;
+    }
+  }
+}

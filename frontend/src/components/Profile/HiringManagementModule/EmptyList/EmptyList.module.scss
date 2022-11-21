@@ -1,0 +1,7 @@
+@import "utils";
+
+.text {
+  @extend %typography-inter-14;
+  color: $c-gray;
+}
+

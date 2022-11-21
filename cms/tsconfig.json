@@ -1,0 +1,32 @@
+{
+  "extends": "@mate-academy/ts-config",
+  "compilerOptions": {
+    "jsx": "react",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "esnext",
+    "isolatedModules": true,
+    "target": "ES5",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@profile-checker/*": ["./plugins/profile-checker/admin/src/*"]
+    }
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "./typings/strapi.d.ts",
+    "./typings/strapi-helper-plugin.d.ts",
+    "./typings/@buffetjs/custom.d.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

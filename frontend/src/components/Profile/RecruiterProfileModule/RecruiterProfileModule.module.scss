@@ -1,0 +1,5 @@
+@import "utils";
+
+.form {
+  @extend %form-with-loader;
+}

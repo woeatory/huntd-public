@@ -1,0 +1,117 @@
+@import "utils";
+
+.formWrapper {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  padding: rem-calc(40 56);
+  background: radial-gradient(at top left, $c-citrus, $c-sky);
+  border-radius: 4px;
+
+  @include breakpoint(medium down){
+    flex-direction: column;
+    align-items: stretch;
+    padding: rem-calc(40 64);
+  }
+
+  @include breakpoint(small down) {
+    padding: rem-calc(24 16);
+  }
+}
+
+.textBlock {
+  flex-basis: 50%;
+  margin-right: rem-calc(16);
+  color: $c-white;
+
+  @include breakpoint(medium down) {
+    margin-right: 0;
+    margin-bottom: rem-calc(32);
+  }
+}
+
+.formBlock {
+  flex-basis: 50%;
+}
+
+.textHeading {
+  @extend %typography-inter-48-bold;
+  color: $c-white;
+
+  @include breakpoint(small down){
+    font-size: rem-calc(32);
+  }
+}
+
+.text {
+  @extend %typography-inter-16;
+}
+
+.sliderValuesArea {
+  @extend %typography-inter-14;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  width: 100%;
+  color: $c-white;
+}
+
+.sliderContainer {
+
+  :global(.rc-slider) {
+    width: calc(100% - 24px);
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  :global(.rc-slider-track) {
+    background: $c-light-gray;
+  }
+
+  :global(.rc-slider-rail) {
+    background: $c-citrus;
+  }
+
+  :global(.rc-slider-track),
+  :global(.rc-slider-rail) {
+    height: 6px;
+  }
+
+}
+
+.sliderValue {
+  @extend %typography-inter-14-bold;
+}
+
+.inputEmail {
+  padding-top: rem-calc(12);
+  padding-bottom: rem-calc(12);
+}
+
+.actionContainer {
+  display: flex;
+  align-items: center;
+
+  @include breakpoint(small down){
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+.emailContainer {
+  flex-grow: 1;
+  margin-right: rem-calc(8);
+
+  @include breakpoint(small down) {
+    margin-right: 0;
+    margin-bottom: rem-calc(8);
+  }
+}
+
+.submitBtn {
+  flex-shrink: 0;
+}
+
+.btnOnly {
+  flex-grow: 1;
+}

@@ -1,0 +1,51 @@
+@import "utils";
+
+.container {
+  justify-content: space-between;
+  margin-top: rem-calc(88);
+  margin-bottom: rem-calc(120);
+
+  @include breakpoint(small down) {
+    justify-content: center;
+  }
+
+  @include breakpoint(small down) {
+    margin-top: rem-calc(40);
+  }
+}
+
+.pricingBox {
+  display: flex;
+
+  @include breakpoint(small down) {
+    justify-content: center;
+  }
+}
+
+.pricingTitle {
+  @extend %typography-inter-56-caps;
+
+  @include breakpoint(medium down) {
+    font-size: rem-calc(32);
+  }
+}
+
+.wrapper {
+  @extend %typography-inter-16;
+  width: 100%;
+  max-width: rem-calc(312);
+  border: 1px solid $c-citrus;
+}
+
+.pricingBlock {
+  padding: rem-calc(32 24);
+}
+
+.huntButton {
+  width: 100%;
+}
+
+.advantagesBlock {
+  padding: rem-calc(32 24);
+  border-top: 1px solid #D1CCC9;
+}

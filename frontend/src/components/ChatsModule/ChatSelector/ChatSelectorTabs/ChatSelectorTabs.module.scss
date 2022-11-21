@@ -1,0 +1,30 @@
+@import "utils";
+
+.chatSelectorTabs {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  padding: rem-calc(4 40 4 40);
+  background-color: $c-bg;
+}
+
+.chatSelectorTab {
+  @extend %hover-underline;
+  padding: rem-calc(8);
+  color: $c-light-gray;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  transition: color $duration $easing;
+
+  :focus {
+    outline-color: transparent;
+  }
+
+  &:hover,
+  &:global(#{$active}) {
+    color: $c-citrus;
+  }
+}

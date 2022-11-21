@@ -1,0 +1,253 @@
+@import "utils";
+
+$types:
+  "rejected" $c-error,
+  "hired" $c-green,
+  "in_progress" $c-alert;
+
+.table {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: rem-calc(40);
+  border-collapse: collapse;
+
+  @include breakpoint(small down) {
+    margin-bottom: rem-calc(16);
+  }
+}
+
+.row {
+  display: flex;
+  gap: rem-calc(10);
+  align-items: center;
+  justify-content: space-between;
+}
+
+.headRow {
+  @extend .row;
+  align-items: flex-start;
+
+  .tableCell:last-child {
+    display: inline-flex;
+    justify-content: flex-end;
+    text-align: right;
+  }
+
+  padding: rem-calc(0 24);
+
+  @include breakpoint(small down) {
+    display: none;
+  }
+}
+
+.tableRow {
+  @extend .row;
+  padding: rem-calc(16 24);
+
+  background-color: $c-white;
+  border-radius: 4px;
+  box-shadow: 0 0 4px rgba(114, 110, 108, 0.12);
+
+  &:not(:last-child) {
+    margin-bottom: rem-calc(8);
+  }
+
+  @include breakpoint(small down) {
+    flex-direction: column;
+    gap: rem-calc(16);
+    align-items: flex-start;
+  }
+}
+
+.chatButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: rem-calc(12);
+  transition: background-color $duration $easing;
+
+  &:hover {
+    background-color: $c-light-peach;
+  }
+}
+
+.tableCell {
+  display: flex;
+  justify-self: flex-start;
+  text-align: left;
+
+  &:first-child {
+    @extend %text-truncate;
+    flex: 1 1 40%;
+
+    @include breakpoint(medium down) {
+      flex-basis: 25%;
+    }
+  }
+
+  &:nth-child(2),
+  &:nth-child(3),
+  &:nth-child(4) {
+    flex: 1 1 15%;
+
+    @include breakpoint(small down) {
+      align-items: flex-end;
+      justify-content: space-between;
+    }
+  }
+
+  &:last-child {
+    flex: 1 1 40%;
+    justify-content: flex-end;
+
+    @include breakpoint(medium down) {
+      flex-basis: 20%;
+    }
+
+    @include breakpoint(small down) {
+      justify-content: stretch;
+    }
+  }
+
+  @include breakpoint(small down) {
+    width: 100%;
+  }
+
+  &_history {
+
+    &:last-child {
+      justify-content: flex-end;
+      color: $c-light-gray;
+
+      @include breakpoint(small down) {
+        justify-content: center;
+      }
+    }
+
+    &:global(#{$active}) {
+      color: $c-citrus;
+    }
+  }
+}
+
+.buttonsWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  justify-content: flex-end;
+
+  @include breakpoint(medium down) {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+}
+
+.button {
+  flex: 1 1 auto;
+  padding: rem-calc(4 16);
+  border: 1px solid transparent;
+
+  @each $type, $color in $types {
+    &_#{$type} {
+      color: $color;
+
+      &:global(#{$active}) {
+        border: 1px solid $color;
+      }
+
+      &:hover {
+        color: darken($color, 30%);
+        #{$c-button-background}: lighten($color, 20%);
+      }
+    }
+  }
+
+  @include breakpoint(small down) {
+    width: 100%;
+    padding: rem-calc(8 16);
+  }
+}
+
+.buddyCell {
+  display: flex;
+  gap: rem-calc(8);
+  align-items: center;
+  color: inherit;
+  text-decoration: none;
+
+  @include icon-styles {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+.buddyAvatar {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 50%;
+
+  &:global(#{$accent}) {
+    border: 1px solid $c-gray;
+  }
+}
+
+.buddyInfoContainer {
+  display: flex;
+  gap: rem-calc(16);
+  align-items: center;
+  @extend %text-truncate;
+
+  @include icon-styles {
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    color: $c-citrus;
+  }
+}
+
+.buddyInfo {
+  display: flex;
+  flex-direction: column;
+  @extend %text-truncate;
+}
+
+.buddyText {
+  display: flex;
+  flex-direction: column;
+  gap: rem-calc(8);
+}
+
+.buddyNameContainer {
+  display: inline-flex;
+  gap: rem-calc(4);
+  align-items: center;
+}
+
+.buddyName {
+  @extend %text-truncate;
+}
+
+.buddyPosition {
+  @extend %text-truncate;
+  text-align: left;
+}
+
+.historyConnectionStatus {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+
+  @include icon-styles {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.mobileLabel {
+  @include breakpoint(medium) {
+    display: none;
+  }
+}

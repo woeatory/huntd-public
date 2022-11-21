@@ -1,0 +1,57 @@
+@import 'utils';
+
+.device {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 270px;
+  height: 560px;
+  background: linear-gradient(180deg, rgba(255, 186, 170, 0.8) 0%, #C2EDFF 100%);
+  border: 10px solid $c-extradark-chocolate;
+  border-radius: 24px;
+  box-shadow: 4px 4px 12px $c-extradark-chocolate;
+
+  @include breakpoint(large) {
+    margin-right: rem-calc(42);
+  }
+
+  @include breakpoint(medium down) {
+    margin-top: rem-calc(32);
+  }
+
+  @include breakpoint(small down) {
+    justify-content: flex-start;
+    width: 90%;
+    height: 370px;
+    padding: rem-calc(80 16 0);
+    margin-bottom: -70px;
+    border-bottom: none;
+    border-radius: 24px 24px 0 0;
+  }
+}
+
+.deviceQR {
+  width: 145px;
+  height: 145px;
+  margin-top: rem-calc(32);
+
+  @include icon-styles {
+    width: 100%;
+    height: 100%;
+  }
+
+  @include breakpoint(small down) {
+    display: none;
+  }
+}
+
+.deviceButtons {
+  flex-direction: column;
+  align-items: center;
+  margin-top: rem-calc(40);
+
+  @include breakpoint(medium) {
+    display: none;
+  }
+}

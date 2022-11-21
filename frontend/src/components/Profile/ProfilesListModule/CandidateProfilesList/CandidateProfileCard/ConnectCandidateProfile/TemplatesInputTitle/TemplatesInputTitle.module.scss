@@ -1,0 +1,26 @@
+@import "utils";
+
+.messageTitleIsVisible {
+  @extend %typography-inter-14;
+}
+
+.messageTitle {
+  @extend %typography-inter-14;
+  max-height: 0;
+  padding: 0;
+  visibility: hidden;
+  opacity: 0;
+  transition:
+    transform $duration $easing,
+    padding $duration $easing,
+    max-height $duration $easing;
+  transform: scale(0);
+}
+
+.messageTitleIsOpened {
+  max-height: rem-calc(48);
+  padding: rem-calc(10 16);
+  visibility: visible;
+  opacity: 1;
+  transform: scale(1);
+}

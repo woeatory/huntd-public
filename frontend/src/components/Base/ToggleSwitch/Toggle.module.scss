@@ -1,0 +1,40 @@
+@import "utils";
+
+.switch {
+  position: relative;
+  width: rem-calc(28);
+  height: rem-calc(14);
+}
+
+.input {
+  @include visually-hidden;
+}
+
+.slider {
+  @include covers-parent;
+  cursor: pointer;
+  background-color: $c-gray;
+  border-radius: rem-calc(12);
+  transition: background-color $duration $easing;
+}
+
+.slider:before {
+  position: absolute;
+  bottom: rem-calc(3);
+  left: rem-calc(3);
+  width: rem-calc(8);
+  height: rem-calc(8);
+  content: "";
+  background-color: $c-white;
+  border-radius: 50%;
+  transition: transform $duration $easing;
+}
+
+.input:checked + .slider {
+  background-color: $c-citrus;
+}
+
+.input:checked + .slider:before {
+  transform: translateX(rem-calc(14));
+}
+
